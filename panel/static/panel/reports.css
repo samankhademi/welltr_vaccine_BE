@@ -1,0 +1,241 @@
+/********************** Profile **********************/
+/* ##### Start Tab Panel Style ##### */
+div.apTabPanel .col {
+    padding: 0px;
+}
+
+div.apTabTitle {
+    width: 96%;
+    min-height: 3rem;
+    margin: auto;
+    text-align: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background: rgba(255, 255, 255, 1.0);
+    border-top: 2px solid rgba(169, 179, 200, 1.0);
+    cursor: pointer;
+}
+
+div.apTabTitle p {
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 0.4rem;
+}
+
+div.apTabTitle p b {
+    font-weight: bold;
+}
+
+div.apTabTitle.active {
+    width: 100%;
+    min-height: 4rem;
+    font-weight: bold;
+    padding-top: 1.1rem;
+    border-top: 4px solid rgba(26, 171, 254, 1.0);
+}
+
+div.apTabTitle:hover {
+    border-color: rgba(26, 171, 254, 1.0);
+}
+
+/* ##### End Tab Panel Style ##### */
+
+/* ##### Start Profile Detail Style ##### */
+div.profileDetail {
+    width: 90%;
+    margin: 30px auto 70px auto;
+}
+
+.apProfilePicture {
+    width: 75px;
+    height: 75px;
+    background-color: rgba(246, 248, 250, 1.0);
+    border-radius: 50% 50% 50% 50%;
+    -moz-border-radius: 50% 50% 50% 50%;
+    -webkit-border-radius: 50% 50% 50% 50%;
+}
+
+div.profileDetail p {
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+div.profileDetail p.apBold {
+    font-weight: bold;
+    color: rgba(33, 37, 41, 1.0);
+}
+
+div.profileDetail a.apLink {
+    font-size: 0.8rem;
+}
+
+#internalProfile {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(252, 252, 252, 1.0);
+}
+
+#internalProfile .profileDetail {
+    margin: 10px auto 20px auto;
+}
+
+#internalProfile div.middleText {
+    padding-top: 1rem;
+}
+
+#internalProfile div.profileDetailTabs {
+    margin-top: 60px;
+}
+
+/* ##### End Profile Detail Style ##### */
+
+/* ##### Start Profile Detail Tabs Style ##### */
+div.profileDetailTabs {
+    margin: 30px auto 30px auto;
+}
+
+div.apTabButton {
+    font-size: 0.9rem;
+    padding: 3px 30px 3px 30px;
+    text-align: center;
+    color: rgba(214, 213, 220, 1.0);
+    background-color: rgba(255, 255, 255, 1.0);
+    border: 1px solid rgba(214, 213, 220, 1.0);
+    cursor: pointer;
+}
+
+div.apTabButton.active {
+    color: rgba(255, 255, 255, 1.0);
+    background-color: rgba(26, 171, 254, 1.0);
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+div.apTabButton:hover {
+    color: rgba(255, 255, 255, 1.0);
+    background-color: rgba(26, 171, 254, 1.0);
+    border: 1px solid transparent;
+}
+
+.apButton {
+    font-size: 0.8rem;
+    line-height: 22px;
+}
+
+/* ##### End Profile Detail Tabs Style ##### */
+
+/* ##### Start Download Style ##### */
+div.dataTableDownload {
+    width: 90%;
+    margin: 0px auto 0px auto;
+}
+
+div.dataTableDownload div.apDownloadItem {
+    padding: 5px;
+    text-align: left;
+}
+
+div.dataTableDownload .apButton {
+    background-color: rgba(22, 187, 94, 1.9);
+}
+/* ##### End Download Style ##### */
+
+/* ##### Start Search And Sort Style ##### */
+div.dataTableSearch {
+    width: 90%;
+    margin: 30px auto 0px auto;
+}
+
+div.dataTableSearch div.col,
+div.dataTableSearch div.col-2 {
+    padding-right: 2px;
+    padding-left: 2px;
+}
+
+div.dataTableSearch div.apFilterItem {
+    padding: 5px;
+}
+
+div.dataTableSearch button {
+    width: 100%;
+}
+
+div.dataTableSearch input.apText {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    /*color: rgba(214, 213, 220, 1.0);*/
+    background-color: rgba(255, 255, 255, 1.0);
+    border: 1px solid rgba(214, 213, 220, 1.0);
+}
+
+/* ##### End Search And Sort Style ##### */
+
+.apPaginateTbl .dataTables_scrollHeadInner{
+    margin: auto;
+}
+
+#example th, td {
+    white-space: nowrap;
+}
+
+#example td,
+#example tfoot th {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+}
+
+/* ##### Start multiple Select Style ##### */
+.bootstrap-select {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    color: rgba(214, 213, 220, 1.0);
+    background-color: rgba(255, 255, 255, 1.0);
+    border: 1px solid rgba(214, 213, 220, 1.0);
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 100%;
+}
+
+.bootstrap-select .btn {
+    border: 0;
+    background-color: transparent;
+    font-size: 0.8rem;
+}
+
+.bootstrap-select .dropdown-menu {
+    font-size: 0.8rem
+}
+
+.bootstrap-select > .dropdown-toggle.bs-placeholder,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:active,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:hover {
+    color: #999
+}
+
+.btn-light:not(:disabled):not(.disabled).active,
+.btn-light:not(:disabled):not(.disabled):active,
+.show > .btn-light.dropdown-toggle {
+    color: #212529;
+    background-color: #f8f9fa;
+}
+
+.bootstrap-select .dropdown-toggle .filter-option-inner-inner{
+    text-align: right;
+}
+
+.bootstrap-select .dropdown-menu li a{
+    text-align: right;
+}
+
+.bootstrap-select.show-tick .dropdown-menu li a span.text{
+    margin-right: unset !important;
+}
+
+.bootstrap-select.show-tick .dropdown-menu .selected span.check-mark{
+    right: 10px !important;
+}
+
+/* ##### End multiple Select Style ##### */

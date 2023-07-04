@@ -1,0 +1,25 @@
+{% load static %}
+
+{% load i18n %}
+
+
+<nav id="sidebar">
+    <div class="sidebar-header">
+        Vaccine Panel
+    </div>
+    <ul class="components">
+        {% if request.user.groups.all.0.name  == "NURSE" %}
+            <li id="list">
+                <a href="{% url "panel:order_list" %}">{% trans 'Order List' %}</a>
+            </li>
+{#            <li id="qr">#}
+{#                <a href="{% url "panel:scan_qr" %}">{% trans 'Scan QR' %}</a>#}
+{#            </li>#}
+        {% endif %}
+        {% if request.user.groups.all.0.name  == "SHROFF" %}
+            <li id="exchange">
+                <a href="{% url "panel:order_search" %}">{% trans 'ExChange' %}</a>
+            </li>
+        {% endif %}
+    </ul>
+</nav>

@@ -1,0 +1,939 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-19 16:41+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\authentication\forms.py:11
+msgid "File siz must be under 20 MB"
+msgstr ""
+
+#: .\authentication\forms.py:13
+msgid "File format is not supported. Please upload images and pdf files only"
+msgstr ""
+
+#: .\authentication\models.py:25
+msgid "email address"
+msgstr ""
+
+#: .\authentication\models.py:27 .\exchange\models.py:19
+msgid "phone number"
+msgstr ""
+
+#: .\authentication\models.py:29 .\authentication\models.py:74
+#: .\order\models.py:10
+msgid "name"
+msgstr ""
+
+#: .\authentication\models.py:30
+msgid "active"
+msgstr ""
+
+#: .\authentication\models.py:31
+msgid "staff"
+msgstr ""
+
+#: .\authentication\models.py:32
+msgid "date joined"
+msgstr ""
+
+#: .\authentication\models.py:33
+msgid "user country"
+msgstr ""
+
+#: .\authentication\models.py:41
+msgid "user"
+msgstr ""
+
+#: .\authentication\models.py:42
+msgid "users"
+msgstr ""
+
+#: .\authentication\models.py:60 .\authentication\models.py:89
+#: .\order\models.py:83
+msgid "related user"
+msgstr ""
+
+#: .\authentication\models.py:62
+msgid "otp code"
+msgstr ""
+
+#: .\authentication\models.py:63
+msgid "has been used"
+msgstr ""
+
+#: .\authentication\models.py:65 .\utils\models.py:39
+msgid "created at"
+msgstr ""
+
+#: .\authentication\models.py:69
+msgid "otp"
+msgstr ""
+
+#: .\authentication\models.py:70
+msgid "otps"
+msgstr ""
+
+#: .\authentication\models.py:75
+msgid "surname"
+msgstr ""
+
+#: .\authentication\models.py:76
+msgid "gender"
+msgstr ""
+
+#: .\authentication\models.py:77
+msgid "nationality"
+msgstr ""
+
+#: .\authentication\models.py:78
+msgid "passport number"
+msgstr ""
+
+#: .\authentication\models.py:80
+msgid "passport expiration date"
+msgstr ""
+
+#: .\authentication\models.py:82
+msgid "birth date"
+msgstr ""
+
+#: .\authentication\models.py:83
+msgid "birth country"
+msgstr ""
+
+#: .\authentication\models.py:85
+msgid "national id"
+msgstr ""
+
+#: .\authentication\models.py:94
+msgid "passport image"
+msgstr ""
+
+#: .\authentication\models.py:98
+msgid "person"
+msgstr ""
+
+#: .\authentication\models.py:99
+msgid "persons"
+msgstr ""
+
+#: .\authentication\service.py:25 .\authentication\service.py:151
+msgid "The Email you have entered does not exist. You need to register first"
+msgstr ""
+
+#: .\authentication\service.py:56 .\authentication\service.py:167
+msgid "persons is empty"
+msgstr ""
+
+#: .\authentication\service.py:59
+msgid "user is incorrect or missed"
+msgstr ""
+
+#: .\authentication\service.py:62
+msgid "location is incorrect or missed"
+msgstr ""
+
+#: .\authentication\service.py:65
+msgid "vaccine_type is incorrect or missed"
+msgstr ""
+
+#: .\authentication\service.py:70
+msgid "email is incorrect or missed"
+msgstr ""
+
+#: .\authentication\service.py:73
+msgid "mobile number is incorrect or missed"
+msgstr ""
+
+#: .\authentication\service.py:77
+msgid "please select a hotel package"
+msgstr ""
+
+#: .\authentication\service.py:87
+msgid ""
+"user with this email or phone already exist, please login with this email"
+msgstr ""
+
+#: .\authentication\service.py:122 .\order\service.py:56
+msgid "your selected vaccine type is not available at the moment"
+msgstr ""
+
+#: .\authentication\service.py:133
+msgid "email is empty"
+msgstr ""
+
+#: .\authentication\service.py:135
+msgid "otp is incorrect or missed"
+msgstr ""
+
+#: .\authentication\service.py:161
+msgid "otp is incorrect or expired"
+msgstr ""
+
+#: .\authentication\service.py:192 .\authentication\service.py:217
+msgid "key <uuid> is null or empty"
+msgstr ""
+
+#: .\authentication\service.py:199
+msgid "you can't delete a person at this step"
+msgstr ""
+
+#: .\authentication\service.py:219
+msgid "key <name> is null or empty"
+msgstr ""
+
+#: .\authentication\service.py:221
+msgid "key <surname> is null or empty"
+msgstr ""
+
+#: .\authentication\service.py:223
+msgid "key <gender> is null or empty"
+msgstr ""
+
+#: .\authentication\service.py:225
+msgid "key <nationality> is null or empty"
+msgstr ""
+
+#: .\authentication\service.py:227
+msgid "key <passport_number> is null or empty"
+msgstr ""
+
+#: .\authentication\service.py:229
+msgid "key <passport_exp_date> is null or empty"
+msgstr ""
+
+#: .\authentication\service.py:231
+msgid "key <birth_date> is null or empty"
+msgstr ""
+
+#: .\authentication\service.py:233
+msgid "key <birth_country> is null or empty"
+msgstr ""
+
+#: .\authentication\service.py:235
+msgid "key <national_id> is null or empty"
+msgstr ""
+
+#: .\authentication\service.py:250
+msgid "invalid person"
+msgstr ""
+
+#: .\authentication\views.py:96 .\authentication\views.py:136
+#: .\authentication\views.py:175 .\exchange\views.py:29 .\exchange\views.py:64
+#: .\exchange\views.py:99 .\order\views.py:73 .\order\views.py:98
+#: .\order\views.py:122 .\order\views.py:180 .\order\views.py:214
+#: .\payment\views.py:46 .\payment\views.py:87 .\payment\views.py:131
+#: .\payment\views.py:170
+msgid "internal error"
+msgstr ""
+
+#: .\authentication\views.py:211 .\authentication\views.py:245
+#: .\authentication\views.py:281
+msgid "Sorry, some information is incorrect"
+msgstr ""
+
+#: .\exchange\models.py:9
+msgid "exchange name"
+msgstr ""
+
+#: .\exchange\models.py:10
+msgid "exchange state, city"
+msgstr ""
+
+#: .\exchange\models.py:11
+msgid "exchange address"
+msgstr ""
+
+#: .\exchange\models.py:14
+msgid "exchange users"
+msgstr ""
+
+#: .\exchange\service.py:38 .\exchange\service.py:64 .\order\service.py:106
+#: .\order\service.py:112 .\order\service.py:159 .\order\service.py:207
+#: .\order\service.py:210 .\order\service.py:234
+msgid "some information lost"
+msgstr ""
+
+#: .\exchange\views.py:24 .\order\views.py:31 .\payment\views.py:155
+msgid "Success"
+msgstr ""
+
+#: .\exchange\views.py:53 .\exchange\views.py:88 .\order\views.py:145
+#: .\order\views.py:169 .\order\views.py:203
+msgid "Sorry, some information lost"
+msgstr ""
+
+#: .\order\models.py:13 .\order\models.py:75
+msgid "vaccine center"
+msgstr ""
+
+#: .\order\models.py:14
+msgid "vaccine centers"
+msgstr ""
+
+#: .\order\models.py:28
+msgid "Open"
+msgstr ""
+
+#: .\order\models.py:29
+msgid "waiting for data submisson"
+msgstr ""
+
+#: .\order\models.py:30
+msgid "full paid"
+msgstr ""
+
+#: .\order\models.py:31
+msgid "paid 20 percent"
+msgstr ""
+
+#: .\order\models.py:32
+msgid "Waiting for setting first dose"
+msgstr ""
+
+#: .\order\models.py:33
+msgid "Waiting for pay"
+msgstr ""
+
+#: .\order\models.py:34
+msgid "Waiting for receiving first dose"
+msgstr ""
+
+#: .\order\models.py:35
+msgid "Waiting for setting second dose"
+msgstr ""
+
+#: .\order\models.py:36
+msgid "Waiting for receiving second dose"
+msgstr ""
+
+#: .\order\models.py:37
+msgid "Done"
+msgstr ""
+
+#: .\order\models.py:45
+msgid "FULL"
+msgstr ""
+
+#: .\order\models.py:46
+msgid "PARTIAL"
+msgstr ""
+
+#: .\order\models.py:47
+msgid "EXCHANGE"
+msgstr ""
+
+#: .\order\models.py:48
+msgid "USDT"
+msgstr ""
+
+#: .\order\models.py:54 .\order\models.py:62 .\order\models.py:89
+#: .\order\models.py:127 .\order\models.py:170
+msgid "vaccine type"
+msgstr ""
+
+#: .\order\models.py:56
+msgid "is vaccine type available?"
+msgstr ""
+
+#: .\order\models.py:63
+msgid "vaccine types"
+msgstr ""
+
+#: .\order\models.py:68
+msgid "order status"
+msgstr ""
+
+#: .\order\models.py:95
+msgid "order amount in euro"
+msgstr ""
+
+#: .\order\models.py:96
+msgid "order paid amount in euro"
+msgstr ""
+
+#: .\order\models.py:98
+msgid "payment date"
+msgstr ""
+
+#: .\order\models.py:105 .\order\models.py:148
+msgid "dose 1 flight number"
+msgstr ""
+
+#: .\order\models.py:108 .\order\models.py:151
+msgid "dose 1 transportation company name"
+msgstr ""
+
+#: .\order\models.py:111 .\order\models.py:154
+msgid "dose 1 arrival date"
+msgstr ""
+
+#: .\order\models.py:119
+msgid "dose1 vaccine center"
+msgstr ""
+
+#: .\order\models.py:134
+msgid "dose1 vaccination date"
+msgstr ""
+
+#: .\order\models.py:141
+msgid "dose1 next vaccination date"
+msgstr ""
+
+#: .\order\models.py:162
+msgid "dose2 vaccine center"
+msgstr ""
+
+#: .\order\models.py:177
+msgid "dose2 vaccination date"
+msgstr ""
+
+#: .\order\models.py:184
+msgid "dose2 next vaccination date"
+msgstr ""
+
+#: .\order\models.py:191
+msgid "payment type"
+msgstr ""
+
+#: .\order\models.py:199
+msgid "hotel package"
+msgstr ""
+
+#: .\order\models.py:205
+msgid "is order used coupon ?"
+msgstr ""
+
+#: .\order\models.py:206
+msgid "wrong coupons counter"
+msgstr ""
+
+#: .\order\models.py:208
+msgid "usdt token"
+msgstr ""
+
+#: .\order\models.py:215
+msgid "order"
+msgstr ""
+
+#: .\order\models.py:216
+msgid "orders"
+msgstr ""
+
+#: .\order\models.py:223
+msgid "AVAILABLE"
+msgstr ""
+
+#: .\order\models.py:224
+msgid "USED"
+msgstr ""
+
+#: .\order\models.py:225
+msgid "DISABLED"
+msgstr ""
+
+#: .\order\models.py:231
+msgid "coupon pin"
+msgstr ""
+
+#: .\order\models.py:235 .\payment\models.py:27
+msgid "related order"
+msgstr ""
+
+#: .\order\models.py:242
+msgid "coupon status"
+msgstr ""
+
+#: .\order\models.py:245
+msgid "coupon off percent"
+msgstr ""
+
+#: .\order\models.py:252 .\order\models.py:253
+msgid "coupon"
+msgstr ""
+
+#: .\order\models.py:257
+msgid "total person"
+msgstr ""
+
+#: .\order\models.py:258
+msgid "hotel name"
+msgstr ""
+
+#: .\order\models.py:259
+msgid "number of nights"
+msgstr ""
+
+#: .\order\models.py:260
+msgid "package price"
+msgstr ""
+
+#: .\order\models.py:261
+msgid "room type in farsi"
+msgstr ""
+
+#: .\order\models.py:262
+msgid "room type in english"
+msgstr ""
+
+#: .\order\models.py:263
+msgid "room type in turkish"
+msgstr ""
+
+#: .\order\models.py:264
+msgid "farsi description"
+msgstr ""
+
+#: .\order\models.py:265
+msgid "english description"
+msgstr ""
+
+#: .\order\models.py:266
+msgid "turkish description"
+msgstr ""
+
+#: .\order\models.py:267
+msgid "farsi address"
+msgstr ""
+
+#: .\order\models.py:268
+msgid "english address"
+msgstr ""
+
+#: .\order\models.py:269
+msgid "turkish address"
+msgstr ""
+
+#: .\order\models.py:274
+msgid "Iranian rial"
+msgstr ""
+
+#: .\order\models.py:280
+msgid "currency ISO code"
+msgstr ""
+
+#: .\order\models.py:286
+msgid "exchange by currency name"
+msgstr ""
+
+#: .\order\service.py:51
+msgid "key <vaccine_center> is incorrect or missed"
+msgstr ""
+
+#: .\order\service.py:53
+msgid "key <vaccine_type> is incorrect or missed"
+msgstr ""
+
+#: .\order\service.py:82
+msgid "key <arrival_date> is incorrect or missed"
+msgstr ""
+
+#: .\order\service.py:162
+msgid "key <order_id> is incorrect or missed"
+msgstr ""
+
+#: .\order\service.py:165
+msgid "key <status> is incorrect or missed"
+msgstr ""
+
+#: .\order\service.py:168
+msgid "key dose1_vaccine_type is incorrect or missed"
+msgstr ""
+
+#: .\order\service.py:171
+msgid "key <dose1_vaccination_date> is incorrect or missed"
+msgstr ""
+
+#: .\order\service.py:237
+msgid "can not duplicate pins"
+msgstr ""
+
+#: .\order\service.py:242
+msgid "Too many attempts. You cannot use coupons anymore"
+msgstr ""
+
+#: .\order\service.py:246
+msgid "pins can't be greater than order related persons"
+msgstr ""
+
+#: .\order\service.py:257
+msgid "invalid pin, you have {} opportunities to enter pins"
+msgstr ""
+
+#: .\order\service.py:279
+msgid "not found"
+msgstr ""
+
+#: .\order\views.py:35 .\order\views.py:237
+msgid "Sorry, order not found"
+msgstr ""
+
+#: .\panel\forms.py:46 .\panel\templates\panel\list.html:81
+msgid "Order Id"
+msgstr ""
+
+#: .\panel\forms.py:52
+msgid "User Email"
+msgstr ""
+
+#: .\panel\forms.py:57
+msgid "Vaccine Center"
+msgstr ""
+
+#: .\panel\forms.py:62 .\panel\templates\panel\list.html:84
+msgid "Vaccine Type"
+msgstr ""
+
+#: .\panel\forms.py:70
+msgid "From Date Arrival"
+msgstr ""
+
+#: .\panel\forms.py:76
+msgid "To Date Arrival"
+msgstr ""
+
+#: .\panel\forms.py:80
+msgid "Status"
+msgstr ""
+
+#: .\panel\forms.py:85 .\panel\templates\panel\list.html:85
+msgid "Payment Status"
+msgstr ""
+
+#: .\panel\forms.py:94 .\panel\forms.py:116
+#: .\panel\templates\panel\exchange_transaction.html:88
+msgid "Payment Id"
+msgstr ""
+
+#: .\panel\forms.py:102
+msgid "From Date"
+msgstr ""
+
+#: .\panel\forms.py:108
+msgid "To Date"
+msgstr ""
+
+#: .\panel\templates\panel\400.html:22
+msgid "bad_request_error"
+msgstr ""
+
+#: .\panel\templates\panel\400.html:24
+msgid "bad_request_error_msg"
+msgstr ""
+
+#: .\panel\templates\panel\404.html:22
+msgid "notfound_error"
+msgstr ""
+
+#: .\panel\templates\panel\404.html:24
+msgid "notfound_error_msg"
+msgstr ""
+
+#: .\panel\templates\panel\500.html:22
+msgid "internal_error"
+msgstr ""
+
+#: .\panel\templates\panel\500.html:24
+msgid "internal_error_msg"
+msgstr ""
+
+#: .\panel\templates\panel\detail.html:178
+msgid "Name"
+msgstr ""
+
+#: .\panel\templates\panel\detail.html:179
+msgid "SurName"
+msgstr ""
+
+#: .\panel\templates\panel\detail.html:180
+msgid "Gender"
+msgstr ""
+
+#: .\panel\templates\panel\detail.html:181
+msgid "Passport Detail"
+msgstr ""
+
+#: .\panel\templates\panel\detail.html:182
+msgid "status"
+msgstr ""
+
+#: .\panel\templates\panel\exchange_transaction.html:32
+#: .\panel\templates\panel\order_search.html:34
+msgid "Search Order"
+msgstr ""
+
+#: .\panel\templates\panel\exchange_transaction.html:37
+#: .\panel\templates\panel\order_search.html:39
+msgid "Transaction List"
+msgstr ""
+
+#: .\panel\templates\panel\exchange_transaction.html:65
+#: .\panel\templates\panel\list.html:57
+msgid "export"
+msgstr ""
+
+#: .\panel\templates\panel\exchange_transaction.html:69
+#: .\panel\templates\panel\list.html:61
+msgid "filter"
+msgstr ""
+
+#: .\panel\templates\panel\exchange_transaction.html:89
+msgid "Payment Date"
+msgstr ""
+
+#: .\panel\templates\panel\exchange_transaction.html:90
+msgid "Amount"
+msgstr ""
+
+#: .\panel\templates\panel\exchange_transaction.html:140
+msgid "No Result"
+msgstr ""
+
+#: .\panel\templates\panel\exchange_transaction.html:156
+msgid "لطفا بازه زمانی مورد نظر خود را انتخاب کنید."
+msgstr ""
+
+#: .\panel\templates\panel\header.html:16
+msgid "home"
+msgstr ""
+
+#: .\panel\templates\panel\header.html:20
+msgid "logout"
+msgstr ""
+
+#: .\panel\templates\panel\list.html:80
+msgid "Detail"
+msgstr ""
+
+#: .\panel\templates\panel\list.html:82
+msgid "Order Date"
+msgstr ""
+
+#: .\panel\templates\panel\list.html:83
+msgid "Email"
+msgstr ""
+
+#: .\panel\templates\panel\list.html:86
+msgid "State"
+msgstr ""
+
+#: .\panel\templates\panel\list.html:87
+msgid "First Dose Arrival"
+msgstr ""
+
+#: .\panel\templates\panel\list.html:145
+msgid "no_result"
+msgstr ""
+
+#: .\panel\templates\panel\list.html:158
+msgid "date_error_message"
+msgstr ""
+
+#: .\panel\templates\panel\order_search.html:120
+msgid "Pay"
+msgstr ""
+
+#: .\panel\templates\panel\order_search.html:129
+msgid "Invalid Payment ID"
+msgstr ""
+
+#: .\panel\templates\panel\order_search.html:145
+msgid "Are You Sure?"
+msgstr ""
+
+#: .\panel\templates\panel\order_search.html:152
+msgid "Yes"
+msgstr ""
+
+#: .\panel\templates\panel\order_search.html:154
+msgid "No"
+msgstr ""
+
+#: .\panel\templates\panel\sidebar.html:13
+msgid "Order List"
+msgstr ""
+
+#: .\panel\templates\panel\sidebar.html:16
+msgid "Scan QR"
+msgstr ""
+
+#: .\panel\templates\panel\sidebar.html:21
+msgid "ExChange"
+msgstr ""
+
+#: .\panel\templates\user\login.html:29 .\panel\templates\user\login.html:48
+msgid "Sign in"
+msgstr ""
+
+#: .\panel\templates\user\login.html:33
+msgid "username"
+msgstr ""
+
+#: .\panel\templates\user\login.html:38
+msgid "password"
+msgstr ""
+
+#: .\payment\models.py:11
+msgid "CREATED"
+msgstr ""
+
+#: .\payment\models.py:12
+msgid "FAILED"
+msgstr ""
+
+#: .\payment\models.py:13
+msgid "UNKNOWN"
+msgstr ""
+
+#: .\payment\models.py:14
+msgid "SUCCESS"
+msgstr ""
+
+#: .\payment\models.py:20
+msgid "payment status"
+msgstr ""
+
+#: .\payment\models.py:23
+msgid "transaction id"
+msgstr ""
+
+#: .\payment\models.py:34
+msgid "transaction response log"
+msgstr ""
+
+#: .\payment\models.py:37
+msgid "transaction request log"
+msgstr ""
+
+#: .\payment\models.py:41
+msgid "related exchange"
+msgstr ""
+
+#: .\payment\models.py:50
+msgid "exchange user"
+msgstr ""
+
+#: .\payment\models.py:59
+msgid "payment transaction"
+msgstr ""
+
+#: .\payment\models.py:60
+msgid "payment transactions"
+msgstr ""
+
+#: .\payment\service.py:54
+msgid "online payment is not available in your country"
+msgstr ""
+
+#: .\payment\service.py:57
+msgid "order_id is incorrect or missed"
+msgstr ""
+
+#: .\payment\service.py:60
+msgid "payment type is incorrect or missed"
+msgstr ""
+
+#: .\payment\service.py:68 .\payment\service.py:153
+msgid ""
+"You have an unknown transaction. You can Inquire the status or proceed to "
+"profile. You can contact support with WhatsApp on 908507000700."
+msgstr ""
+
+#: .\payment\service.py:123
+msgid "payment call error"
+msgstr ""
+
+#: .\payment\service.py:133
+msgid "transaction id is incorrect or missed"
+msgstr ""
+
+#: .\payment\service.py:160
+msgid "Payment Failed. You can proceed to profile retry payment."
+msgstr ""
+
+#: .\payment\service.py:187
+msgid "exchange is not valid"
+msgstr ""
+
+#: .\payment\service.py:190
+msgid "user is not valid"
+msgstr ""
+
+#: .\payment\service.py:193
+msgid "order is not valid"
+msgstr ""
+
+#: .\payment\service.py:203
+msgid "user haven't access to specified exchange"
+msgstr ""
+
+#: .\payment\service.py:211
+msgid "order doesn't exist"
+msgstr ""
+
+#: .\payment\service.py:246
+msgid "please insert payment token"
+msgstr ""
+
+#: .\payment\service.py:249
+msgid "a usdt transacion exist"
+msgstr ""
+
+#: .\payment\views.py:143
+msgid "Payment Successful. You can proceed to profile and view your order."
+msgstr ""
+
+#: .\settings\base.py:132
+msgid "English"
+msgstr ""
+
+#: .\settings\base.py:133
+msgid "Turkish"
+msgstr ""
+
+#: .\settings\base.py:134
+msgid "Spanish"
+msgstr ""
+
+#: .\settings\base.py:135
+msgid "Farsi"
+msgstr ""
+
+#: .\utils\functions.py:56 .\utils\functions.py:57
+msgid "page not found"
+msgstr ""
+
+#: .\utils\models.py:36
+msgid "uuid"
+msgstr ""
+
+#: .\utils\models.py:43 .\utils\models.py:49
+msgid "updated at"
+msgstr ""
+
+#: .\vaccine\urls.py:20
+msgid "Admin"
+msgstr ""
+
+#: .\vaccine\urls.py:23
+msgid "Vaccine | Vaccine Admin Panel"
+msgstr ""
+
+#: .\vaccine\urls.py:26
+msgid "Vaccine"
+msgstr ""

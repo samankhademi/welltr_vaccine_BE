@@ -1,0 +1,42 @@
+{% load static %}
+
+{% load i18n %}
+
+<div id="header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col logoContainer">
+                <img src="{% static "assets/images/logo.jpg" %}">
+                <span><b>Super</b>Pay</span>
+                <i id="sidebarCollapse"></i>
+            </div>
+            <div class="col accountContainer">
+                <div class="account-home" onclick="goToHome()">
+                    <div class="sprite sprite--edit-account-logo home-account-icon"></div>
+                    <span class="account-home--text">{% trans 'home' %}</span>
+                </div>
+                <div class="logout" onclick="logout()">
+                    <div class="sprite sprite--logout-logo logout-icon"></div>
+                    <span class="logout--text">{% trans 'logout' %}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function logout() {
+        window.location.href = "{% url "panel:logout" %}"
+    }
+
+    function goToHome() {
+        var URL = window.location.protocol + "//" + window.location.host
+        {% if request.user.groups.all.0.name  == "NURSE" %}
+            var URL = window.location.protocol + "//" + window.location.host + "/panel/list"
+        {% endif %}
+        {% if request.user.groups.all.0.name  == "SHROFF" %}
+            var URL = window.location.protocol + "//" + window.location.host + "/panel/search"
+        {% endif %}
+        window.location.href = URL;
+    }
+</script>

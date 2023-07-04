@@ -1,0 +1,32 @@
+{% extends "layout/layout.html" %}
+
+{% load static %}
+
+{% load i18n %}
+
+{% block pageHead %}
+    <link rel="stylesheet" type="text/css" href="{% static "layout/error.css" %}">
+    <link rel='stylesheet' type='text/css' href='{% static "css/vendors/bootstrap-select.min.css" %}'>
+    <script src='{% static "script/vendors/bootstrap-select.min.js" %}'></script>
+{% endblock pageHead %}
+
+{% block main %}
+
+    <div class="main-container">
+        <div class="container">
+
+            <div class="row justify-content-center align-items-center">
+                <div class="col-6 col-sm-12 col-md-6">
+                    <div class="alert alert-warning" role="alert">
+                        <h4 class="alert-heading">400</h4>
+                        <p>{% trans "bad_request_error" %}</p>
+                        <hr>
+                        <p class="mb-0 alert-en-summery">{% trans "bad_request_error_msg" %}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock main %}

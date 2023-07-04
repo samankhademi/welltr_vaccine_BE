@@ -1,0 +1,120 @@
+/********************** Transactions **********************/
+
+div.dataTableSearch {
+    width: 90%;
+    margin: 30px auto 0px auto;
+}
+
+div.dataTableSearch div.col {
+    padding-right: 2px;
+    padding-left: 2px;
+}
+
+div.dataTableSearch input.apText,
+div.dataTableSearch select.apText {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    color: rgb(71, 71, 73);
+    background-color: rgba(255, 255, 255, 1.0);
+    border: 1px solid rgba(214, 213, 220, 1.0);
+}
+
+th {
+    font-size: 14px;
+}
+
+
+div.dataTableFilter {
+    width: 100%;
+    margin: 5px auto 5px auto;
+}
+
+div.dataTableFilter div.col {
+    padding-right: 2px;
+    padding-left: 2px;
+}
+
+div.dataTableFilter input.apText,
+div.dataTableSearch select.apText {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center !important;
+    color: black !important;
+    background-color: rgba(255, 255, 255, 1.0);
+    border: 1px solid rgba(214, 213, 220, 1.0);
+}
+
+@media only screen and (max-width: 600px) {
+    div.dataTableFilter input.apText {
+        margin: 4px 0;
+    }
+}
+
+.ltr-input {
+    text-align: center !important;
+    direction: ltr !important;
+}
+
+td, th {
+    text-align: center;
+}
+
+
+
+/* ##### Start multiple Select Style ##### */
+.bootstrap-select {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    color: rgba(214, 213, 220, 1.0);
+    background-color: rgba(255, 255, 255, 1.0);
+    border: 1px solid rgba(214, 213, 220, 1.0);
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 100%;
+}
+
+.bootstrap-select .btn {
+    border: 0;
+    background-color: transparent;
+    font-size: 0.8rem;
+}
+
+.bootstrap-select .dropdown-menu {
+    font-size: 0.8rem
+}
+
+.bootstrap-select > .dropdown-toggle.bs-placeholder,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:active,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:hover {
+    color: #999
+}
+
+.btn-light:not(:disabled):not(.disabled).active,
+.btn-light:not(:disabled):not(.disabled):active,
+.show > .btn-light.dropdown-toggle {
+    color: #212529;
+    background-color: #f8f9fa;
+}
+
+.bootstrap-select .dropdown-toggle .filter-option-inner-inner {
+    text-align: left;
+}
+
+.bootstrap-select .dropdown-menu li a {
+    text-align: left;
+}
+
+.bootstrap-select.show-tick .dropdown-menu li a span.text {
+    margin-right: unset !important;
+}
+
+.bootstrap-select.show-tick .dropdown-menu .selected span.check-mark {
+    right: 10px !important;
+}
+
+/* ##### End multiple Select Style ##### */
+th {
+    white-space: nowrap;
+}

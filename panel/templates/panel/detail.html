@@ -1,0 +1,399 @@
+{% extends "panel/layout.html" %}
+
+{% load static %}
+
+{% load i18n %}
+
+{% block pageHead %}
+    <link rel='stylesheet' type='text/css' href='{% static "panel/list.css" %}'>
+    <link rel='stylesheet' type='text/css' href='{% static "panel/detail.css" %}'>
+    <link rel='stylesheet' type='text/css' href='{% static "panel/datatable.css" %}'>
+    <link rel='stylesheet' type='text/css' href='{% static "css/vendors/bootstrap-select.min.css" %}'>
+    <script src='{% static "script/vendors/jquery.dataTables.min.js" %}'></script>
+    <script src='{% static "script/vendors/bootstrap-select.min.js" %}'></script>
+    <link rel="stylesheet" type="text/css" href="{% static "css/vendors/bootstrap-datepicker.min.css" %}">
+    <script rel="script" type="application/javascript"
+            src="{% static "script/vendors/jalali-moment.browser.js" %}"></script>
+    <script rel="script" type="application/javascript"
+            src="{% static "script/vendors/bootstrap-datepicker.min.js" %}"></script>
+{% endblock pageHead %}
+
+{% block main %}
+
+    <!--##### START RESULT CARD BOX SECTION #####-->
+    <div class="container cardBox">
+        <!--##### START REGISTRATION INFO SECTION #####-->
+        <p class="h4">Registration Info</p>
+        <hr class="my-12"/>
+        <div class="row dataTableSearch">
+            <div class="col-sm-6 col-lg-3 apFilterItem">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" class="form-control-plaintext"
+                       value="{{ info.content.user.email }}"
+                       readonly>
+            </div>
+            <div class="col-sm-6 col-lg-3 apFilterItem">
+                <label for="phone_number">Phone Number</label>
+                <input type="text" name="phone" id="phone_number" class="form-control-plaintext"
+                       value="{{ info.content.user.phone }}" readonly>
+            </div>
+            <div class="col-sm-6 col-lg-3 apFilterItem">
+                <label for="vaccine_type">Vaccine Type</label>
+                <input type="text" name="vaccine_type" id="vaccine_type" class="form-control-plaintext"
+                       value="{{ info.content.vaccine_type.vaccine_type }}" readonly>
+            </div>
+            <div class="col-sm-6 col-lg-3 apFilterItem">
+                <label for="payment_status">Payment Status</label>
+                <input type="text" name="payment_status" id="payment_status" class="form-control-plaintext"
+                       value="{{ info.content.payment_type_val }}" readonly>
+            </div>
+            <div class="col-sm-6 col-lg-3 apFilterItem">
+                <label for="payment_date">Payment Date</label>
+                <input type="text" name="payment_date" id="payment_date" class="form-control-plaintext"
+                       value="{{ info.content.payment_date }}" readonly>
+            </div>
+            <div class="col-sm-6 col-lg-3 apFilterItem">
+                <label for="payment_amount">Order Value</label>
+                <input type="text" name="payment_amount" id="payment_amount" class="form-control-plaintext"
+                       value="{{ info.content.hotel_package.price }} EUR" readonly>
+            </div>
+            <div class="col-sm-6 col-lg-3 apFilterItem">
+                <label for="payment_amount">Paid Amount</label>
+                <input type="text" name="payment_remaining" id="payment_remaining" class="form-control-plaintext"
+                       value="{{ info.content.paid_amount }} EUR" readonly>
+            </div>
+            <div class="col-sm-6 col-lg-3 apFilterItem">
+                <label for="payment_amount">Discount</label>
+                <input type="text" name="payment_remaining" id="payment_remaining" class="form-control-plaintext"
+                       value="{{ info.content.discount }}" readonly>
+            </div>
+            <div class="col-sm-6 col-lg-3 apFilterItem">
+                <label for="number">Hotel Name</label>
+                <input type="text" name="number" id="number" class="form-control-plaintext"
+                       value="{{ info.content.hotel_package.hotel_name }}" readonly>
+            </div>
+            <div class="col-sm-6 col-lg-3 apFilterItem">
+                <label for="number">Room Type</label>
+                <input type="text" name="number" id="number" class="form-control-plaintext"
+                       value="{{ info.content.hotel_package.room_type_en }}" readonly>
+            </div>
+            <div class="col-sm-6 col-lg-3 apFilterItem">
+                <label for="number">Duration (nights)</label>
+                <input type="text" name="number" id="number" class="form-control-plaintext"
+                       value="{{ info.content.hotel_package.nights_num }}" readonly>
+            </div>
+            <div class="col-sm-6 col-lg-3 apFilterItem">
+                <label for="number">Guest Count</label>
+                <input type="text" name="number" id="number" class="form-control-plaintext"
+                       value="{{ info.content.hotel_package.total_person }}" readonly>
+            </div>
+            <div class="col-sm-6 col-lg-3 apFilterItem">
+                <label for="first_dose">Status</label>
+                <input type="text" name="first_dose" id="first_dose" class="form-control-plaintext"
+                       value="{{ info.content.status_val }}" readonly>
+            </div>
+            {% if info.content.usdt_token %}
+            <div class="col-sm-6 col-lg-3 apFilterItem">
+                <label for="first_dose">USTD Token</label>
+                <input type="text" name="first_dose" id="first_dose" class="form-control-plaintext"
+                       value="{{ info.content.usdt_token }}" readonly>
+            </div>
+            {% endif %}
+        </div>
+        <!--##### END REGISTRATION INFO SECTION #####-->
+
+        {% if "RECEIVING_FIRST_DOSE" in info.content.status or "SECOND_DOSE" in info.content.status or "DONE" in info.content.status %}
+            <!--##### START FLY INFO SECTION #####-->
+            <p class="h4">Reservation Info</p>
+            <hr class="my-12"/>
+            <div class="row dataTableSearch">
+                <div class="col-sm-6 col-lg-3 apFilterItem d-none">
+                    <label for="flight_num_1">Flight Number</label>
+                    <input type="text" name="flight_num_1" id="flight_num_1" class="form-control-plaintext"
+                           value="{{ info.content.dose1_flight_number }}" readonly>
+                </div>
+                <div class="col-sm-6 col-lg-3 apFilterItem d-none">
+                    <label for="airline_1">AirLine</label>
+                    <input type="text" name="airline_1" id="airline_1" class="form-control-plaintext"
+                           value="{{ info.content.dose1_transport_company_name }}" readonly>
+                </div>
+                <div class="col-sm-6 col-lg-3 apFilterItem">
+                    <label for="date_1">Reservation Date</label>
+                    <input type="text" name="date_1" id="date_1" class="form-control-plaintext"
+                           value="{{ info.content.dose1_arrival_date }}" readonly>
+                </div>
+                {% if "SECOND_DOSE" in info.content.status or "DONE" in info.content.status %}
+                    <div class="col-sm-6 col-lg-3 apFilterItem">
+                        <label for="date_1">Received Vaccine Type</label>
+                        <input type="text" class="form-control-plaintext" readonly
+                               value="{{ info.content.dose1_vaccine_type.vaccine_type }}">
+                    </div>
+                    <div class="col-sm-6 col-lg-3 apFilterItem">
+                        <label for="date_1">Received Date</label>
+                        <input type="text" class="form-control-plaintext" readonly
+                               value="{{ info.content.dose1_vaccination_date }}">
+                    </div>
+                {% endif %}
+            </div>
+            <!--##### END FLY INFO SECTION #####-->
+        {% endif %}
+
+        <!--##### START PERSON INFO SECTION #####-->
+        <p class="h4">Person Info</p>
+        <hr class="my-12"/>
+        <div class="row justify-content-md-center">
+
+            <div class="col apPaginateTbl">
+                <div class="table-responsive">
+                    <table id="example" class="apTbl">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>{% trans 'Name' %}</th>
+                            <th>{% trans 'SurName' %}</th>
+                            <th>{% trans 'Gender' %}</th>
+                            <th>{% trans 'Passport Detail' %}</th>
+                            <th>{% trans 'National ID' %}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for data in info.content.persons %}
+                            <tr>
+                                <td>{{ 1|add:forloop.counter0 }}</td>
+                                <td>{{ data.name }}</td>
+                                <td>{{ data.surname }}</td>
+                                <td>{{data.gender}}</td>
+                                <td>{{ data.passport_number }}
+                                    <a href="#" data-toggle="modal" data-target="#passportInfo"
+                                       data-passnum="{{ data.passport_number }}"
+                                       data-nationality="{{ data.nationality }}"
+                                       data-passexpdate="{{ data.passport_exp_date }}"
+                                       data-passimg="{{ data.passport_image }}">
+                                        <div class="sprite sprite--detail-logo detail-icon"></div>
+                                    </a>
+                                </td>
+                                <td>
+                                    {{ data.national_id }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    {% if "RECEIVING" in info.content.status %}
+                        <button style="display: block;margin: 20px auto;" type="button" class="btn btn-primary">
+                            <a href="#" data-toggle="modal" data-target="#firstDose">
+                                Confirmation of vaccine dose
+                            </a>
+                        </button>
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+        <!--##### END PERSON INFO SECTION #####-->
+
+
+    </div>
+    <!--##### END RESULT CARD BOX SECTION #####-->
+
+    <!-- Passport Info Modal -->
+    <div class="modal fade" id="passportInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body" style="text-align: center;font-weight: bold;padding: 30px 0;">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6 col-lg-4 apFilterItem">
+                                <label for="nationality">Nationality</label>
+                                <input type="text" name="nationality" id="nationality" class="form-control-plaintext"
+                                       readonly>
+                            </div>
+                            <div class="col-sm-6 col-lg-4 apFilterItem">
+                                <label for="pass_num">Passport Number</label>
+                                <input type="text" name="pass_num" id="pass_num" class="form-control-plaintext"
+                                       readonly>
+                            </div>
+                            <div class="col-sm-6 col-lg-4 apFilterItem">
+                                <label for="pass_exp">Passport Exp</label>
+                                <input type="text" name="pass_exp" id="pass_exp" class="form-control-plaintext"
+                                       readonly>
+                            </div>
+                            <div class="col-sm-6 col-lg-4 apFilterItem">
+                                <label for="pass_exp">Passport Image</label>
+                                <img style="max-width: 300px" id="pass_img" src=""/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- First Dose Info Modal -->
+    <div class="modal fade" id="firstDose" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form id="confirmation_form" action="{% url "panel:order_edit" id %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="next_step" value="{{ next_step }}">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">
+                            {% if info.content.status == "WAITING_FOR_RECEIVING_FIRST_DOSE" %}
+                                First
+                            {% else %}
+                                Second
+                            {% endif %}
+                            Dose Info
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="text-align: center;font-weight: bold;padding: 30px 0;">
+                        <div id="loading" class="wrap-login__loading-wrapper" style="text-align: center">
+                            <div class="wrap-login__loading-wrapper__loading spinner-grow" role="status">
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row dataTableSearch">
+                                <div class="col-sm-6 col-lg-6 apFilterItem">
+                                    <label for="vaccine-types">Vaccine Type</label><br>
+                                    <select id="vaccine-types" name="vaccine_type"
+                                            class="select selectpicker removable">
+                                        {% for vaccine_type in vaccine_types %}
+                                            <option value="{{ vaccine_type.uuid }}">{{ vaccine_type.vaccine_type }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-sm-6 col-lg-6 apFilterItem">
+                                    <label for="vaccine-types">Vaccination Date</label><br>
+                                    <input type="text" name="vaccination_date"
+                                           class="form-control apText apRequired" id="vaccination_date"
+                                           autocomplete="off" placeholder="Vaccination Date">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Success</h5>
+                </div>
+                <div class="modal-body">
+                    <p>your order update successful.</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="confirm_btn" type="button" class="btn btn-primary">confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#vaccination_date").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '2020:2030',
+                dateFormat: 'dd/mm/yy',
+            }).datepicker("setDate", "0");
+            $("#next_vaccination_date").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '2020:2030',
+                dateFormat: 'dd/mm/yy'
+            }).datepicker("setDate", "90");
+            ;
+
+
+            $('#passportInfo').on('show.bs.modal', function (event) {
+                var a = $(event.relatedTarget) // Button that triggered the modal
+                var passport_number = a.data('passnum')
+                var nationality = a.data('nationality')
+                var passport_exp_date = a.data('passexpdate')
+                var passport_image = a.data('passimg')
+                var modal = $(this)
+                modal.find('.modal-body input#pass_num').val(passport_number)
+                modal.find('.modal-body input#nationality').val(nationality)
+                modal.find('.modal-body input#pass_exp').val(passport_exp_date)
+                modal.find('.modal-body img#pass_img').attr('src', passport_image)
+            })
+
+        });
+    </script>
+    <script>
+
+        $(window).load(function () {
+
+            if ($('.removable').length > 0) {
+                $("div.removable").parent().append("<i class='removable_icon text-danger'>X</i>");
+                $("div.removable , i.removable_icon").hover(function () {
+                    var elem = $(this).parent().children("i");
+                    elem.addClass('removable_icon_show');
+
+                    elem.click(function () {
+                        elem.parent().find('.selectpicker').each(function () {
+                            $(this).children("option:selected").prop("selected", false).trigger('change');
+                        });
+                    });
+
+                }, function () {
+                    $(this).parent().children("i").removeClass('removable_icon_show');
+                });
+            }
+
+        });
+
+    </script>
+    <script>
+
+        $(window).load(function () {
+
+            $("#loading").css("display", "none");
+
+            $('#confirmation_form').on('submit', function (event) {
+                event.preventDefault();
+                $("#loading").css("display", "block");
+
+                var data = $('#confirmation_form').serializeArray();
+                console.log(data)
+                $.post("{% url "panel:order_edit" id %}", data, function () {
+                    $("#firstDose").modal('hide');
+                    $("#myModal").modal('show');
+                })
+                    .done(function () {
+                        console.log("done");
+                    })
+                    .fail(function () {
+                        alert("Incorrect request");
+                    });
+
+            });
+
+            $('#confirm_btn').click(function () {
+                window.location.href = "{% url "panel:order_list" %}";
+            });
+
+        });
+
+    </script>
+
+{% endblock main %}

@@ -1,0 +1,93 @@
+/********************** Data Table **********************/
+/* ##### Start Data Table Style ##### */
+table.apTbl {
+    width: 90%;
+    margin: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 0.8rem;
+}
+
+table.apTbl tbody tr:nth-child(even) {
+    background-color: rgba(252, 252, 252, 1.0);
+}
+
+table.apTbl thead tr th,
+table.apTbl tbody tr:last-child td {
+    border-bottom: 2px solid rgba(224, 223, 229, 1.0);
+}
+
+table.apTbl tr th,
+table.apTbl tr td {
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    line-height: 2rem;
+    border-bottom: 1px solid rgba(224, 223, 229, 1.0);
+}
+
+table.apTbl tr td span.highlight {
+    background-color: rgba(255, 237, 122, 1.0);
+    padding: 0px 5px 0px 5px;
+}
+
+table.apTbl tr th::before,
+table.apTbl tr th::after {
+    bottom: -0.1em !important;
+}
+
+.apNoneTbl div.dataTables_length,
+.apNoneTbl div.dataTables_filter,
+.apNoneTbl div.dataTables_info,
+.apNoneTbl div.dataTables_paginate {
+    display: none;
+}
+
+.apPaginateTbl div.dataTables_length,
+.apPaginateTbl div.dataTables_filter {
+    display: none;
+}
+
+.apPaginateTbl div div.dataTables_info,
+.apPaginateTbl div div.dataTables_paginate {
+    padding: 15px;
+    padding-top: 1rem;
+    color: rgba(169, 179, 200, 1.0);
+    /*float: right;*/
+}
+
+.apPaginateTbl div div.dataTables_info {
+    margin-right: 5%;
+}
+
+.apPaginateTbl div div.dataTables_paginate {
+}
+
+.apPaginateTbl div div.dataTables_paginate span {
+    display: none;
+}
+
+.apPaginateTbl div div.dataTables_paginate a.paginate_button {
+    padding: 2px 6px 2px 6px;
+    margin: 3px;
+    color: rgba(255, 255, 255, 1.0);
+    background-color: rgba(26, 171, 254, 1.0);
+    cursor: pointer;
+}
+
+.apPaginateTbl div div.dataTables_paginate a.paginate_button.disabled {
+    color: rgba(169, 179, 200, 1.0);
+    background-color: rgba(246, 248, 250, 1.0);
+}
+
+.apPaginateTbl div div.dataTables_paginate a.paginate_button.next:after {
+    font-weight: bold;
+    content: '\003E';
+}
+
+.apPaginateTbl div div.dataTables_paginate a.paginate_button.previous:after {
+    font-weight: bold;
+    content: '\003C';
+}
+
+/* ##### End AP Data Table  Style ##### */

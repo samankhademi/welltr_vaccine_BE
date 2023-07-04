@@ -1,0 +1,139 @@
+/********************** Header **********************/
+#header {
+    width: 100%;
+    min-height: 70px;
+    background: rgba(255, 255, 255, 1.00);
+    -webkit-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    z-index: 1040;
+}
+
+#sidebar,
+#content {
+    padding-top: 100px !important;
+}
+
+.logoContainer {
+    display: flex;
+}
+
+.logoContainer img {
+    max-height: 40px;
+    margin-top: 15px;
+}
+
+div.logoContainer span {
+    font-size: 1.4rem;
+    margin: 20px 5px 5px 5px;
+    color: rgba(27, 20, 100, 1.0);
+}
+
+.logoContainer i#sidebarCollapse {
+    width: 30px;
+    height: 30px;
+    margin-top: 25px;
+    margin-left: 10px;
+    float: right;
+    cursor: pointer;
+}
+
+.logoContainer i#sidebarCollapse:after {
+    content: '\2261';
+    font-size: 2rem;
+    line-height: 1.4rem;
+    color: rgba(139, 151, 177, 1.0);
+}
+
+html[dir="rtl"] .logoContainer i#sidebarCollapse {
+    float: left;
+}
+
+.accountContainer {
+    display: flex;
+    align-items: center;
+    direction: rtl;
+}
+
+.container-app {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ||***** Edit Account BTN *****|| */
+.account-home {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background: #f3f3f3;
+    cursor: pointer;
+}
+
+.account-home:hover {
+    background: #e8e8e8;
+}
+
+.home-account-icon {
+    margin-left: 10px;
+    display: none;
+}
+
+.account-home .account-home--text {
+    font-weight: 500;
+    font-size: 12px;
+    color: #7d7d7d;
+}
+
+/* ||***** Logout Account BTN *****|| */
+.logout {
+    margin-right: 10px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logout:hover {
+    background-color: #ef302b17;
+    background-color: rgba(26, 171, 254, 0.15);
+}
+
+.logout-icon {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.logout .logout--text {
+    color: #ef302b;
+    font-weight: 500;
+    font-size: 12px;
+}
+.sprite--logout-logo {
+    background-position: -15px -35px;
+	width: 12px;
+	height: 12px;
+}
+
+.setLanguage{
+
+}
+
+.setLanguage .flags-icon{
+    width: 30px;
+}
+
+.setLanguage .bootstrap-select{
+    border: 0px;
+}
+
+.setLanguage .bootstrap-select>.dropdown-toggle:after{
+    display: none;
+}
+
+.setLanguage .dropdown-item{
+    padding: 0.25rem 0.7rem;
+}

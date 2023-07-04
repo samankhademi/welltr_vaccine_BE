@@ -1,0 +1,220 @@
+{% extends "panel/layout.html" %}
+
+{% load static %}
+
+{% load i18n %}
+
+{% block pageHead %}
+    <link rel='stylesheet' type='text/css' href='{% static "panel/list.css" %}'>
+    <link rel='stylesheet' type='text/css' href='{% static "panel/detail.css" %}'>
+    <link rel='stylesheet' type='text/css' href='{% static "css/vendors/dataTables.bootstrap4.min.css" %}'>
+    <link rel='stylesheet' type='text/css' href='{% static "panel/reports.css" %}'>
+    <link rel='stylesheet' type='text/css' href='{% static "panel/datatable.css" %}'>
+    <link rel='stylesheet' type='text/css' href='{% static "css/vendors/bootstrap-select.min.css" %}'>
+    <link rel="stylesheet" type="text/css" href="{% static "css/vendors/bootstrap-datepicker.min.css" %}">
+
+    <script rel="script" type="application/javascript"
+            src="{% static "script/vendors/jalali-moment.browser.js" %}"></script>
+    <script rel="script" type="application/javascript"
+            src="{% static "script/vendors/bootstrap-datepicker.min.js" %}"></script>
+    <script rel="script" type="application/javascript"
+            src="{% static "script/vendors/bootstrap-datepicker.fa.min.js" %}"></script>
+    <script src='{% static "script/vendors/jquery.dataTables.min.js" %}'></script>
+    <script src='{% static "script/vendors/bootstrap-select.min.js" %}'></script>
+
+{% endblock pageHead %}
+
+{% block main %}
+
+    <!--##### START TAB PANEL HEADER SECTION #####-->
+    <div class="container">
+        <div class="row justify-content-md-center apTabPanel">
+            <div class="col">
+                <a href="{% url 'panel:order_search' %}">
+                    <div class="apTabTitle active">{% trans 'Search Order' %}</div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="{% url 'panel:exchange_transaction' %}">
+                    <div class="apTabTitle">{% trans 'Transaction List' %}</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--##### END TAB PANEL HEADER SECTION #####-->
+
+    <div class="container cardBox">
+
+        <!--##### START RESULT FILTER SECTION #####-->
+        <div class="row dataTableSearch">
+            <form id="filter_form" action="" method="get" style="width: 100%">
+                <div class="form-row">
+                    <div class="col-sm-6 col-lg-9 apFilterItem">
+                        {{ filter_form.payment_id }}
+                    </div>
+                    <div class="col-sm-6 col-lg-3 apFilterItem">
+                        <button type="submit" class="btn apButton">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--##### END RESULT FILTER SECTION #####-->
+
+        <!--##### START RESULT DATA TABLE SECTION #####-->
+        <div class="row justify-content-md-center mt-5">
+
+            {% if not is_invalid_response %}
+                {% if result.content|length != 0 %}
+
+                    <div class="col apPaginateTbl">
+                    <p class="h4">Payment Info</p>
+                    <hr class="my-12"/>
+                    <form id="confirm_form" action="" method="get" style="width: 100%">
+                        {% csrf_token %}
+                        <div class="row dataTableSearch">
+                            <div class="col-sm-6 col-lg-3 apFilterItem">
+                                <label for="email">Payment Id</label>
+                                <input type="text" name="payment_id" id="payment_id" class="form-control-plaintext"
+                                       value="{{ result.content.0.code }}"
+                                       readonly>
+                            </div>
+                            <div class="col-sm-6 col-lg-3 apFilterItem">
+                                <label for="email">Order Id</label>
+                                <input type="text" name="order_id" id="order_id" class="form-control-plaintext"
+                                       value="{{ result.content.0.id }}"
+                                       readonly>
+                                <input type="hidden" name="exchange_id" id="exchange_id" class="form-control-plaintext"
+                                       value="{{ result.content.1.exchange_id }}"
+                                       readonly>
+                            </div>
+                        </div>
+                        <div class="row dataTableSearch">
+                            <div class="col-sm-6 col-lg-3 apFilterItem">
+                                <label for="email">Total Person</label>
+                                <input type="text" name="user_name" id="user_name" class="form-control-plaintext"
+                                       value="{{ result.content.0.hotel_package.total_person }}"
+                                       readonly>
+                            </div>
+                            <div class="col-sm-6 col-lg-3 apFilterItem">
+                                <label for="email">Mobile</label>
+                                <input type="text" name="user_mobile" id="user_mobile" class="form-control-plaintext"
+                                       value="{{ result.content.0.user.phone }}"
+                                       readonly>
+                            </div>
+                            <div class="col-sm-6 col-lg-3 apFilterItem">
+                                <label for="email">Email</label>
+                                <input type="text" name="user_email" id="user_email" class="form-control-plaintext"
+                                       value="{{ result.content.0.user.email }}"
+                                       readonly>
+                            </div>
+                            <div class="col-sm-6 col-lg-3 apFilterItem">
+                                <label for="email">Payable Amount</label>
+                                <input type="text" name="pay_amount" id="pay_amount" class="form-control-plaintext"
+                                       value="{{ result.content.0.amount }} EUR"
+                                       readonly>
+                            </div>
+                        </div>
+                        <div class="row dataTableSearch justify-content-md-end mb-4 mt-5">
+                            <div class="col-sm-6 col-lg-3 apFilterItem">
+                                <a class="btn apButton" href="#" data-toggle="modal"
+                                   data-target="#areYouSure">{% trans "Pay" %}</a>
+                            </div>
+                        </div>
+                    </form>
+                {% elif result.content == "" %}
+                    <div class="col apPaginateTbl text-center apUnknown">
+                    </div>
+                {% else %}
+                    <div class="col apPaginateTbl text-center apUnknown">
+                        {% trans "Invalid Payment ID" %}
+                    </div>
+                {% endif %}
+            {% endif %}
+            </div>
+            <!--##### END RESULT DATA TABLE SECTION #####-->
+
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="areYouSure" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body" style="text-align: center;font-weight: bold;padding: 30px 0;">
+                        {% trans "Are You Sure?" %}
+                    </div>
+                    <div id="loading" class="wrap-login__loading-wrapper" style="text-align: center">
+                        <div class="wrap-login__loading-wrapper__loading spinner-grow" role="status">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="payConfirm" class="btn btn-primary">{% trans "Yes" %}</button>
+                        <button type="button" id="payDismiss" class="btn btn-secondary"
+                                data-dismiss="modal">{% trans "No" %}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            $(document).ready(function () {
+                $('.apTabTitle').on('click', function () {
+                    $('.apTabTitle').removeClass('active');
+                    $(this).toggleClass('active');
+                });
+            });
+
+            $(document).ready(function () {
+                {#$('#example').DataTable();#}
+
+                $("#fromDate").datepicker({
+                    changeMonth: true,
+                    changeYear: true,
+                    yearRange: '1390:1420',
+                    dateFormat: 'yy/mm/dd',
+                    maxDate: moment(new Date()).format('jYYYY/jMM/jDD')
+                });
+                $("#toDate").datepicker({
+                    changeMonth: true,
+                    changeYear: true,
+                    yearRange: '1390:1420',
+                    dateFormat: 'yy/mm/dd',
+                    maxDate: moment(new Date()).format('jYYYY/jMM/jDD')
+                });
+
+                $('#areYouSore').on('show.bs.modal', function (event) {
+                });
+
+                $("#loading").css("display", "none");
+
+
+                $('#payConfirm').click(function () {
+                    $("#payConfirm").prop("disabled",true);
+                    $('#confirm_form').submit();
+                });
+
+                $('#confirm_form').on('submit', function (event) {
+                    event.preventDefault();
+                    $("#loading").css("display", "block");
+
+                    var data = $('#confirm_form').serializeArray();
+                    $.post("{% url "panel:payment_update" %}", data, function () {
+                        console.log("success");
+                        window.location.href = "{% url "panel:exchange_transaction" %}";
+                    })
+                        .done(function () {
+                            console.log("done");
+                            $('#payDismiss').click();
+                        })
+                        .fail(function () {
+                            console.log("Incorrect request");
+                        });
+
+                });
+
+            });
+        </script>
+
+{% endblock main %}

@@ -1,0 +1,131 @@
+{% extends "panel/layout.html" %}
+
+{% load static %}
+
+{% load i18n %}
+
+{% block pageHead %}
+    <link rel='stylesheet' type='text/css' href='{% static "panel/list.css" %}'>
+    <link rel='stylesheet' type='text/css' href='{% static "panel/detail.css" %}'>
+    <link rel='stylesheet' type='text/css' href='{% static "panel/datatable.css" %}'>
+    <link rel='stylesheet' type='text/css' href='{% static "css/vendors/bootstrap-select.min.css" %}'>
+    <script src='{% static "script/vendors/jquery.dataTables.min.js" %}'></script>
+    <script src='{% static "script/vendors/bootstrap-select.min.js" %}'></script>
+    <link rel="stylesheet" type="text/css" href="{% static "css/vendors/bootstrap-datepicker.min.css" %}">
+    <script rel="script" type="application/javascript"
+            src="{% static "script/vendors/jalali-moment.browser.js" %}"></script>
+    <script rel="script" type="application/javascript"
+            src="{% static "script/vendors/bootstrap-datepicker.min.js" %}"></script>
+    <script rel="script" type="application/javascript"
+            src="{% static "panel/jsQR.js" %}"></script>
+
+
+{% endblock pageHead %}
+
+{% block main %}
+
+    <!--##### START RESULT CARD BOX SECTION #####-->
+    <div class="container cardBox">
+        <!--##### START REGISTRATION INFO SECTION #####-->
+        <p class="h4">Scan QR Code</p>
+        <hr class="my-12"/>
+        <div class="row dataTableSearch">
+            <div class="col-sm-12 col-lg-12">
+                <div id="loadingMessage">🎥 Unable to access video stream (please make sure you have a webcam enabled)
+                </div>
+                <canvas id="canvas" hidden></canvas>
+                <div id="output" hidden>
+                    <div id="outputMessage">No QR code detected.</div>
+                    <div hidden><b>Data:</b> <span id="outputData"></span></div>
+                </div>
+
+            </div>
+        </div>
+        <!--##### END REGISTRATION INFO SECTION #####-->
+
+
+    </div>
+    <!--##### END RESULT CARD BOX SECTION #####-->
+
+    <script>
+
+        $(window).load(function () {
+
+            if ($('.removable').length > 0) {
+                $("div.removable").parent().append("<i class='removable_icon text-danger'>X</i>");
+                $("div.removable , i.removable_icon").hover(function () {
+                    var elem = $(this).parent().children("i");
+                    elem.addClass('removable_icon_show');
+
+                    elem.click(function () {
+                        elem.parent().find('.selectpicker').each(function () {
+                            $(this).children("option:selected").prop("selected", false).trigger('change');
+                        });
+                    });
+
+                }, function () {
+                    $(this).parent().children("i").removeClass('removable_icon_show');
+                });
+            }
+
+        });
+
+    </script>
+    <script>
+        var video = document.createElement("video");
+        var canvasElement = document.getElementById("canvas");
+        var canvas = canvasElement.getContext("2d");
+        var loadingMessage = document.getElementById("loadingMessage");
+        var outputContainer = document.getElementById("output");
+        var outputMessage = document.getElementById("outputMessage");
+        var outputData = document.getElementById("outputData");
+
+        function drawLine(begin, end, color) {
+            canvas.beginPath();
+            canvas.moveTo(begin.x, begin.y);
+            canvas.lineTo(end.x, end.y);
+            canvas.lineWidth = 4;
+            canvas.strokeStyle = color;
+            canvas.stroke();
+        }
+
+        // Use facingMode: environment to attemt to get the front camera on phones
+        navigator.mediaDevices.getUserMedia({video: {facingMode: "environment"}}).then(function (stream) {
+            video.srcObject = stream;
+            video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
+            video.play();
+            requestAnimationFrame(tick);
+        });
+
+        function tick() {
+            loadingMessage.innerText = "⌛ Loading video..."
+            if (video.readyState === video.HAVE_ENOUGH_DATA) {
+                loadingMessage.hidden = true;
+                canvasElement.hidden = false;
+                outputContainer.hidden = false;
+
+                canvasElement.height = video.videoHeight;
+                canvasElement.width = video.videoWidth;
+                canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
+                var imageData = canvas.getImageData(0, 0, canvasElement.width, canvasElement.height);
+                var code = jsQR(imageData.data, imageData.width, imageData.height, {
+                    inversionAttempts: "dontInvert",
+                });
+                if (code) {
+                    drawLine(code.location.topLeftCorner, code.location.topRightCorner, "#FF3B58");
+                    drawLine(code.location.topRightCorner, code.location.bottomRightCorner, "#FF3B58");
+                    drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF3B58");
+                    drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
+                    outputMessage.hidden = true;
+                    outputData.parentElement.hidden = false;
+                    outputData.innerText = code.data;
+                } else {
+                    outputMessage.hidden = false;
+                    outputData.parentElement.hidden = true;
+                }
+            }
+            requestAnimationFrame(tick);
+        }
+    </script>
+
+{% endblock main %}

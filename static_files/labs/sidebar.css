@@ -1,0 +1,92 @@
+/********************** Sidebar **********************/
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: rgba(255, 255, 255, 1.0);
+    color: rgba(80, 80, 82, 1.00);
+    -webkit-box-shadow: 3px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 3px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+html[dir="rtl"] #sidebar {
+    left: unset;
+    right: 0;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+html[dir="rtl"] #sidebar.active {
+    margin-left: unset;
+    margin-right: -250px;
+}
+
+/* ##### Start Sidebar Header Style ##### */
+#sidebar .sidebar-header {
+    min-height: 100px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ##### End Sidebar Header Style ##### */
+
+/* ##### Start Sidebar List Style ##### */
+#sidebar ul.components {
+    padding: 20px 0;
+}
+
+#sidebar ul li {
+    position: relative;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: rgba(8, 157, 242, 1.00);
+    background: rgba(240, 250, 255, 1.00);
+}
+
+#sidebar ul li.active > a,
+a[aria-expanded="true"] {
+    font-weight: 500;
+    color: rgba(8, 157, 242, 1.00);
+    background: rgba(240, 250, 255, 1.00);
+}
+
+#sidebar ul li.active:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 0px;
+    width: 5px;
+    background-color: rgba(8, 157, 242, 1.0);
+}
+
+html[dir="rtl"] #sidebar ul li.active:before {
+    left: unset;
+    right: 0px;
+}
+
+#sidebar ul li a i.icons {
+    padding: 15px;
+    font-size: 1.1em;
+    color: rgba(169, 179, 200, 1.0);
+}
+
+#sidebar ul li.active a i.icons {
+    color: rgba(26, 171, 254, 1.0);
+}
+
+/* ##### End Sidebar List Style ##### */

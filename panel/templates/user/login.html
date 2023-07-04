@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static "users/login.css" %}">
+{% endblock head %}
+
+{% block content %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 limiter no-padding">
+                <div class="container-login login_bg">
+                    <div class="wrap-login">
+
+                        <div id="loading" class="wrap-login__loading-wrapper">
+                            <div class="wrap-login__loading-wrapper__loading spinner-grow" role="status">
+                            </div>
+                        </div>
+                        <form action="#" id="login-form" method="post" class="login-form validate-form">
+                            {% csrf_token %}
+                            <span class="login-form-logo">
+                                <img src="/backend/static/assets/images/logo.jpg">
+                            </span>
+                            <span class="login-form-title">
+                                {% trans 'Sign in' %}
+                            </span>
+                            <div class="wrap-input100 validate-input" data-validate="Enter username">
+                                <input autocomplete="off" class="input100" type="text" name="username" placeholder="">
+                                <span class="focus-input100" data-placeholder="{% trans 'username' %}"></span>
+                            </div>
+                            <div id="submit-button" class="wrap-input100 validate-input" data-validate="Enter password">
+                                <input autocomplete="off" class="input100" type="password" name="password" id="password"
+                                       placeholder="">
+                                <span class="focus-input100" data-placeholder="{% trans 'password' %}"></span>
+                            </div>
+{#                            <div class="contact100-form-checkbox">#}
+{#                                <input class="input-checkbox" id="remember" type="checkbox" name="remember">#}
+{#                                <label class="label-checkbox100" for="ckb1">#}
+{#                                    {% trans 'remember_me' %}#}
+{#                                </label>#}
+{#                            </div>#}
+                            <div class="container-login-form-btn">
+                                <button class="login-form-btn">
+                                    {% trans 'Sign in' %}
+                                </button>
+                            </div>
+                            <div id="container-login__message" class="container-login__message">
+
+                            </div>
+{#                            <div class="text-center" style="margin-top: 20px">#}
+{#                                <a class="txt1" href="">#}
+{#                                    {% trans 'dont_remember' %}#}
+{#                                </a>#}
+{#                            </div>#}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        jQuery(function ($) {
+
+            /* [Focus input] */
+            $('.input100').each(function () {
+                $(this).on('blur', function () {
+                    if ($(this).val().trim() != "") {
+                        $(this).addClass('has-val');
+                    } else {
+                        $(this).removeClass('has-val');
+                    }
+                })
+            })
+
+            /* [Validate] */
+            $("#login-form").submit(function (event) {
+
+                event.preventDefault();
+
+                // check for empty inputs
+                if ($("input[name=username]").val() == "") {
+
+                    showErrorMessage("please insert your username");
+                    return false;
+
+                } else if ($("input[name=password]").val() == "") {
+
+                    showErrorMessage("please insert your password");
+                    return false;
+
+                }
+
+                // storing form's action url in variable
+                var url = $(this).attr('action');
+
+                // serializing forms data for reading by name attr in server
+                var data = $(this).serializeArray();
+
+                $("#loading").css("display", "block");
+
+                // send forms data to server
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: data,
+                    dataType: "json",
+                    success: function (response) {
+
+                        $("#loading").css("display", "none");
+                        window.location.href = "{% url "panel:labs" %}";
+
+                    }
+                    , error: function (response) {
+
+                        $("#loading").css("display", "none");
+
+                        if ("status" in response && "responseJSON" in response) {
+                            showErrorMessage(response.responseJSON.message);
+                        }
+
+                    }
+                });
+
+            });
+
+            function showErrorMessage(message) {
+                $("#container-login__message").fadeIn();
+                $("#container-login__message").text(message);
+                setTimeout(function () {
+                    $("#container-login__message").fadeOut();
+                }, 1500);
+            }
+
+            function redirectPost(url, data) {
+                var form = document.createElement('form');
+                document.body.appendChild(form);
+                form.method = 'post';
+                form.action = url;
+                for (var name in data) {
+                    var input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = name;
+                    input.value = data[name];
+                    form.appendChild(input);
+                }
+                form.submit();
+            }
+
+        });
+
+    </script>
+
+{% endblock %}

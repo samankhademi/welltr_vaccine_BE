@@ -1,0 +1,234 @@
+{% extends "panel/layout.html" %}
+
+{% load static %}
+
+{% load i18n %}
+
+{% block pageHead %}
+    <link rel='stylesheet' type='text/css' href='{% static "panel/list.css" %}'>
+    <link rel='stylesheet' type='text/css' href='{% static "panel/datatable.css" %}'>
+    <link rel='stylesheet' type='text/css' href='{% static "css/vendors/bootstrap-select.min.css" %}'>
+    <script src='{% static "script/vendors/jquery.dataTables.min.js" %}'></script>
+    <script src='{% static "script/vendors/bootstrap-select.min.js" %}'></script>
+    <link rel="stylesheet" type="text/css" href="{% static "css/vendors/bootstrap-datepicker.min.css" %}">
+    <script rel="script" type="application/javascript"
+            src="{% static "script/vendors/jalali-moment.browser.js" %}"></script>
+    <script rel="script" type="application/javascript"
+            src="{% static "script/vendors/bootstrap-datepicker.min.js" %}"></script>
+{% endblock pageHead %}
+
+{% block main %}
+
+    <!--##### START RESULT CARD BOX SECTION #####-->
+    <div class="container cardBox">
+        <!--##### START RESULT FILTER SECTION #####-->
+        <div class="row dataTableSearch">
+            <form id="fetch_txes_form" action="" method="get" style="width: 100%">
+                <div class="form-row">
+                    <div class="col-sm-6 col-lg-3 apFilterItem">
+                        {{ filter_form.order_id }}
+                    </div>
+                    <div class="col-sm-6 col-lg-3 apFilterItem">
+                        {{ filter_form.user_email }}
+                    </div>
+                    <div class="col-sm-6 col-lg-3 apFilterItem">
+                        {{ filter_form.mobile }}
+                    </div>
+                    <div class="col-sm-6 col-lg-3 apFilterItem">
+                        {{ filter_form.vaccine_type }}
+                    </div>
+                    <div class="col-sm-6 col-lg-3 apFilterItem">
+                        {{ filter_form.hotel_name }}
+                    </div>
+                    <div class="col-sm-6 col-lg-3 apFilterItem">
+                        {{ filter_form.duration }}
+                    </div>
+                    <div class="col-sm-6 col-lg-3 apFilterItem">
+                        {{ filter_form.status }}
+                    </div>
+                    <div class="col-sm-6 col-lg-3 apFilterItem">
+                        {{ filter_form.payment_type }}
+                    </div>
+                    <div class="col-sm-6 col-lg-3 apFilterItem">
+                        {{ filter_form.from_date }}
+                    </div>
+                    <div class="col-sm-6 col-lg-3 apFilterItem">
+                        {{ filter_form.to_date }}
+                    </div>
+                </div>
+                <!--##### START ّ Filter RESULT SECTION #####-->
+                <div class="row dataTableFilter justify-content-md-end mb-4">
+                    <!--
+                    <div class="col-sm-6 col-lg-3 apFilterItem">
+                        <button id="export_to_xls" class="btn apButton apButton--download">{% trans "export" %}</button>
+                    </div>
+                    -->
+                    <div class="col-sm-6 col-lg-3 apFilterItem">
+                        <button class="btn apButton" type="submit">{% trans "filter" %}</button>
+                    </div>
+                </div>
+                <!--##### End Filter RESULT SECTION #####-->
+            </form>
+        </div>
+        <!--##### END RESULT FILTER SECTION #####-->
+
+        <div class="row justify-content-md-center">
+
+
+            {% if not is_invalid_response %}
+                {% if transactions.content|length != 0 %}
+                    <div class="col apPaginateTbl">
+                        <div class="table-responsive">
+                            <table id="example" class="apTbl">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>{% trans 'Detail' %}</th>
+                                    <th>{% trans 'Order Id' %}</th>
+                                    <th>{% trans 'Order Date' %}</th>
+                                    <th>{% trans 'Email' %}</th>
+                                    <th>{% trans 'Mobile' %}</th>
+                                    <th>{% trans 'Hotel Name' %}</th>
+                                    <th>{% trans 'Room Type' %}</th>
+                                    <th>{% trans 'Duration (nights)' %}</th>
+                                    <th>{% trans 'Guests Count' %}</th>
+                                    <th>{% trans 'State' %}</th>
+                                    <th>{% trans 'Payment Status' %}</th>
+                                    <th>{% trans 'Check in Date' %}</th>
+                                    <th>{% trans 'Vaccine Type' %}</th>
+                                    <th>{% trans 'Order Value' %}</th>
+                                    <th>{% trans 'Paid Amount' %}</th>
+                                    <th>{% trans 'Coupon Used' %}</th>
+                                    <th>{% trans 'Discount' %}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for data in transactions.content %}
+                                    <tr>
+                                        <td>{{ 1|add:forloop.counter0 }}</td>
+                                        <td>
+                                            <a href="{% url "panel:order_detail" id=data.id %} "><div class="sprite sprite--detail-logo detail-icon"></div></a>
+                                        </td>
+                                        <td>{{ data.id }}</td>
+                                        <td>{{ data.created_at|slice:"0:10" }}</td>
+                                        <td>{{ data.user.email }}</td>
+                                        <td>{{ data.user.phone }}</td>
+                                        <td style="white-space: nowrap;">{{ data.hotel_package.hotel_name }}</td>
+                                        <td style="white-space: nowrap;">{{ data.hotel_package.room_type_en }}</td>
+                                        <td>{{ data.hotel_package.nights_num }}</td>
+                                        <td>{{ data.hotel_package.total_person }}</td>
+                                        <td style="white-space: nowrap;">{{ data.status_val }}</td>
+                                        <td><span class="{{ data.payment_type_class }}">{{ data.payment_type_val }}</span></td>
+                                        <td>{{ data.dose1_arrival_date }}</td>
+                                        <td>{{ data.vaccine_type.vaccine_type }}</td>
+                                        <td>{{ data.hotel_package.price }}</td>
+                                        <td>{{ data.paid_amount }}</td>
+                                        <td>{{ data.is_used_coupon }}</td>
+                                        <td>{{ data.discount }}</td>
+{#                                        <td><a href="/{{ data.id }}"></a><div class="sprite sprite--detail-logo detail-icon"></div></td>#}
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!--
+                        <div class="row">
+                            <div class="col-sm-12 col-md-5">
+                                <div class="dataTables_info" role="status" aria-live="polite">
+                                    view {{ transactions.pagination.start_index }}
+                                    to {{ transactions.pagination.end_index }}
+                                    from {{ transactions.pagination.total_index }}
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-7">
+                                {% if transactions.pagination.has_other_pages %}
+                                    <div class="dataTables_paginate paging_simple_numbers">
+                                        {% if transactions.pagination.has_previous %}
+                                            <a class="paginate_button page-item previous"
+                                               href="{{ request.get_full_path }}&page={{ transactions.pagination.previous_page_number }}"></a>
+                                        {% else %}
+                                            <a class="paginate_button page-item previous disabled" href="#"></a>
+                                        {% endif %}
+                                        {% if transactions.pagination.has_next %}
+                                            <a class="paginate_button page-item next"
+                                               href="{{ request.get_full_path }}&page={{ transactions.pagination.next_page_number }}"></a>
+                                        {% else %}
+                                            <a class="paginate_button page-item next disabled" href="#"></a>
+                                        {% endif %}
+                                        <div class="clearfix"></div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        -->
+
+                    </div>
+                {% else %}
+                    <div class="col apPaginateTbl text-center apUnknown">
+                        {% trans "no_result" %}
+                    </div>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+    <!--##### END RESULT CARD BOX SECTION #####-->
+
+    <!-- Modal -->
+    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body" style="text-align: center;font-weight: bold;padding: 30px 0;">
+            {% trans "date_error_message" %}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#from_date").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '2020:2030',
+                dateFormat: 'dd/mm/yy'
+            });
+            $("#to_date").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '2020:2030',
+                dateFormat: 'dd/mm/yy'
+            });
+
+        });
+    </script>
+    <script>
+
+        $(window).load(function () {
+
+            if ($('.removable').length > 0) {
+                $("div.removable").parent().append("<i class='removable_icon text-danger'>X</i>");
+                $("div.removable , i.removable_icon").hover(function () {
+                    var elem = $(this).parent().children("i");
+                    elem.addClass('removable_icon_show');
+
+                    elem.click(function () {
+                        elem.parent().find('.selectpicker').each(function () {
+                            $(this).children("option:selected").prop("selected", false).trigger('change');
+                        });
+                    });
+
+                }, function () {
+                    $(this).parent().children("i").removeClass('removable_icon_show');
+                });
+            }
+
+        });
+
+    </script>
+
+{% endblock main %}

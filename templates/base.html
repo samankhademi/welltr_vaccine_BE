@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="{% block direction %}ltr{% endblock direction %}">
+{% load static %}
+<head>
+    <title>SUPERPAY :: VACCINE </title>
+
+    <!--##### START SITE META TAG #####-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--##### START SITE STYLE FILE #####-->
+    <link rel='stylesheet' type='text/css' href='{% static "css/vendors/bootstrap.min.css" %}'>
+    <link rel='stylesheet' type='text/css' href='{% static "css/base_sprite.css" %}'>
+    <link rel='stylesheet' type='text/css' href='{% static "css/base.css" %}'>
+
+    <!--##### START SITE SCRIPT FILE #####-->
+    <script src='{% static "script/vendors/jquery-1.12.0.min.js" %}'></script>
+    <script src='{% static "script/vendors/popper.min.js" %}'></script>
+    <script src='{% static "script/vendors/bootstrap.min.js" %}'></script>
+    <script src='{% static "script/base.js" %}'></script>
+
+    <script>
+
+        bootstrap("{% block language %}en{% endblock %}");
+
+        function bootstrap(language) {
+            var link = document.createElement("link");
+            if (language === "en" || language === "tr") {
+                link.href = '{% static "css/fonts_en.css" %}';
+            } else {
+                link.href = '{% static "css/fonts.css" %}';
+            }
+            link.type = "text/css";
+            link.rel = "stylesheet";
+            document.getElementsByTagName("head")[0].appendChild(link);
+        }
+
+    </script>
+
+    {% block head %}
+    {% endblock head %}
+    {% block pageHead %}
+    {% endblock pageHead %}
+</head>
+<body>
+
+{% block content %}
+{% endblock content %}
+
+
+</body>
+</html>

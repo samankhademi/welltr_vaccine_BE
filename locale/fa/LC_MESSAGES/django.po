@@ -1,0 +1,1007 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-19 16:41+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\authentication\forms.py:11
+msgid "File siz must be under 20 MB"
+msgstr "حجم فایل آپلود شده باید کمتر از 20 مگابایت باشد"
+
+#: .\authentication\forms.py:13
+msgid "File format is not supported. Please upload images and pdf files only"
+msgstr "فرمت فایل آپلود شده صحیح نیست. لطفا فقط تصویر یا pdf آپلود کنید."
+
+#: .\authentication\models.py:25
+msgid "email address"
+msgstr "آدرس ایمیل"
+
+#: .\authentication\models.py:27 .\exchange\models.py:19
+msgid "phone number"
+msgstr "شماره موبایل"
+
+#: .\authentication\models.py:29 .\authentication\models.py:74
+#: .\order\models.py:10
+msgid "name"
+msgstr "نام"
+
+#: .\authentication\models.py:30
+msgid "active"
+msgstr "فعال"
+
+#: .\authentication\models.py:31
+msgid "staff"
+msgstr "کارکنان"
+
+#: .\authentication\models.py:32
+msgid "date joined"
+msgstr "تاریخ ثبت نام"
+
+#: .\authentication\models.py:33
+msgid "user country"
+msgstr "کشور"
+
+#: .\authentication\models.py:41
+msgid "user"
+msgstr "کاربر"
+
+#: .\authentication\models.py:42
+msgid "users"
+msgstr "کاربران"
+
+#: .\authentication\models.py:60 .\authentication\models.py:89
+#: .\order\models.py:83
+msgid "related user"
+msgstr "کاربر مربوطه"
+
+#: .\authentication\models.py:62
+msgid "otp code"
+msgstr "رمز یک‌بارمصرف"
+
+#: .\authentication\models.py:63
+msgid "has been used"
+msgstr "استفاده شده است"
+
+#: .\authentication\models.py:65 .\utils\models.py:39
+msgid "created at"
+msgstr "تاریخ ثبت"
+
+#: .\authentication\models.py:69
+msgid "otp"
+msgstr "رمز یک‌بارمصرف"
+
+#: .\authentication\models.py:70
+msgid "otps"
+msgstr "رمز‌های یک‌بارمصرف"
+
+#: .\authentication\models.py:75
+msgid "surname"
+msgstr "نام خانوادگی"
+
+#: .\authentication\models.py:76
+msgid "gender"
+msgstr "جنسیت"
+
+#: .\authentication\models.py:77
+msgid "nationality"
+msgstr "ملیت"
+
+#: .\authentication\models.py:78
+msgid "passport number"
+msgstr "شماره گذرنامه"
+
+#: .\authentication\models.py:80
+msgid "passport expiration date"
+msgstr "تاریخ انقضای گذرنامه"
+
+#: .\authentication\models.py:82
+msgid "birth date"
+msgstr "تاریخ تولد"
+
+#: .\authentication\models.py:83
+msgid "birth country"
+msgstr "کشور محل تولد"
+
+#: .\authentication\models.py:85
+msgid "national id"
+msgstr "کد ملی"
+
+#: .\authentication\models.py:94
+msgid "passport image"
+msgstr "تصویر گذرنامه"
+
+#: .\authentication\models.py:98
+msgid "person"
+msgstr "مهمان"
+
+#: .\authentication\models.py:99
+msgid "persons"
+msgstr "مهمانان"
+
+#: .\authentication\service.py:25 .\authentication\service.py:151
+msgid "The Email you have entered does not exist. You need to register first"
+msgstr "ایمیل مورد نظر ثبت نشده است، لطفا ابتدا ثبت نام کنید"
+
+#: .\authentication\service.py:56 .\authentication\service.py:167
+msgid "persons is empty"
+msgstr "لطفا مهمانان را وارد نمایید"
+
+#: .\authentication\service.py:59
+msgid "user is incorrect or missed"
+msgstr "کاربر یافت نشد"
+
+#: .\authentication\service.py:62
+msgid "location is incorrect or missed"
+msgstr "اطلاعات مکانی وارد نشده است"
+
+#: .\authentication\service.py:65
+msgid "vaccine_type is incorrect or missed"
+msgstr "نوع واکسن درست نمی باشد یا وارد نشده است"
+
+#: .\authentication\service.py:70
+#, fuzzy
+#| msgid "user is incorrect or missed"
+msgid "email is incorrect or missed"
+msgstr "کاربر یافت نشد"
+
+#: .\authentication\service.py:73
+#, fuzzy
+#| msgid "user is incorrect or missed"
+msgid "mobile number is incorrect or missed"
+msgstr "کاربر یافت نشد"
+
+#: .\authentication\service.py:77
+msgid "please select a hotel package"
+msgstr "لطفا هتل و نوع اتاق را انتخاب کنید"
+
+#: .\authentication\service.py:87
+msgid ""
+"user with this email or phone already exist, please login with this email"
+msgstr ""
+"کاربر با این ایمیل یا شماره موبایل در حال حاضر ثبت نام شده است، لطفا با "
+"کاربر مورد نظر لاگین کنید"
+
+#: .\authentication\service.py:122 .\order\service.py:56
+msgid "your selected vaccine type is not available at the moment"
+msgstr "واکسن انتخابی در حال حاضر موجود نیست"
+
+#: .\authentication\service.py:133
+msgid "email is empty"
+msgstr "ایمیل وارد نشده است"
+
+#: .\authentication\service.py:135
+msgid "otp is incorrect or missed"
+msgstr "رمز یکبار مصرف وارد نشده است"
+
+#: .\authentication\service.py:161
+msgid "otp is incorrect or expired"
+msgstr "رمز یکبار مصرف اشتباه یا منقضی شده است"
+
+#: .\authentication\service.py:192 .\authentication\service.py:217
+msgid "key <uuid> is null or empty"
+msgstr "خطا در ارسال درخواست"
+
+#: .\authentication\service.py:199
+msgid "you can't delete a person at this step"
+msgstr "در این مرحله امکان حذف مهمان وجود ندارد"
+
+#: .\authentication\service.py:219
+msgid "key <name> is null or empty"
+msgstr "لطفا نام را وارد نمایید"
+
+#: .\authentication\service.py:221
+msgid "key <surname> is null or empty"
+msgstr "لطفا نام خانوادگی را وارد نمایید"
+
+#: .\authentication\service.py:223
+msgid "key <gender> is null or empty"
+msgstr "لطفا جنیست را مشخص کنید"
+
+#: .\authentication\service.py:225
+msgid "key <nationality> is null or empty"
+msgstr "ملیت کاربر مشخص نشده است"
+
+#: .\authentication\service.py:227
+msgid "key <passport_number> is null or empty"
+msgstr "شماره ی پاسپورت وارد نشده است"
+
+#: .\authentication\service.py:229
+msgid "key <passport_exp_date> is null or empty"
+msgstr "تاریخ انتضائ پاسپورت وارد نشده است"
+
+#: .\authentication\service.py:231
+msgid "key <birth_date> is null or empty"
+msgstr "تاریخ تولد وارد نشده است"
+
+#: .\authentication\service.py:233
+msgid "key <birth_country> is null or empty"
+msgstr "کشور محل تولد وارد نشده است"
+
+#: .\authentication\service.py:235
+msgid "key <national_id> is null or empty"
+msgstr "کد ملی وارد نشده است"
+
+#: .\authentication\service.py:250
+msgid "invalid person"
+msgstr "کاربر نامعتبر می باشد"
+
+#: .\authentication\views.py:96 .\authentication\views.py:136
+#: .\authentication\views.py:175 .\exchange\views.py:29 .\exchange\views.py:64
+#: .\exchange\views.py:99 .\order\views.py:73 .\order\views.py:98
+#: .\order\views.py:122 .\order\views.py:180 .\order\views.py:214
+#: .\payment\views.py:46 .\payment\views.py:87 .\payment\views.py:131
+#: .\payment\views.py:170
+msgid "internal error"
+msgstr "خطای سرویس دهنده"
+
+#: .\authentication\views.py:211 .\authentication\views.py:245
+#: .\authentication\views.py:281
+msgid "Sorry, some information is incorrect"
+msgstr "لطفا اطلاعات وارد شده را بررسی و مجدد تلاش کنید"
+
+#: .\exchange\models.py:9
+msgid "exchange name"
+msgstr "نام صرافی"
+
+#: .\exchange\models.py:10
+msgid "exchange state, city"
+msgstr "شهر"
+
+#: .\exchange\models.py:11
+#, fuzzy
+#| msgid "email address"
+msgid "exchange address"
+msgstr "آدرس ایمیل"
+
+#: .\exchange\models.py:14
+msgid "exchange users"
+msgstr ""
+
+#: .\exchange\service.py:38 .\exchange\service.py:64 .\order\service.py:106
+#: .\order\service.py:112 .\order\service.py:159 .\order\service.py:207
+#: .\order\service.py:210 .\order\service.py:234
+msgid "some information lost"
+msgstr "بعضی از اطلاعات وارد نشده است"
+
+#: .\exchange\views.py:24 .\order\views.py:31 .\payment\views.py:155
+msgid "Success"
+msgstr "موفق"
+
+#: .\exchange\views.py:53 .\exchange\views.py:88 .\order\views.py:145
+#: .\order\views.py:169 .\order\views.py:203
+msgid "Sorry, some information lost"
+msgstr "متاسفیم، بعضی از اطلاعات به درستی وارد نشده است"
+
+#: .\order\models.py:13 .\order\models.py:75
+msgid "vaccine center"
+msgstr ""
+
+#: .\order\models.py:14
+msgid "vaccine centers"
+msgstr ""
+
+#: .\order\models.py:28
+msgid "Open"
+msgstr "باز"
+
+#: .\order\models.py:29
+msgid "waiting for data submisson"
+msgstr "در انتظار ورود اطلاعات"
+
+#: .\order\models.py:30
+msgid "full paid"
+msgstr "پرداخت کامل"
+
+#: .\order\models.py:31
+msgid "paid 20 percent"
+msgstr ""
+
+#: .\order\models.py:32
+msgid "Waiting for setting first dose"
+msgstr "در انتظار تعیین زمان رزرو هتل"
+
+#: .\order\models.py:33
+msgid "Waiting for pay"
+msgstr "در انتظار پرداخت"
+
+#: .\order\models.py:34
+msgid "Waiting for receiving first dose"
+msgstr "در انتظار ورود به محل اقامت"
+
+#: .\order\models.py:35
+msgid "Waiting for setting second dose"
+msgstr ""
+
+#: .\order\models.py:36
+msgid "Waiting for receiving second dose"
+msgstr ""
+
+#: .\order\models.py:37
+msgid "Done"
+msgstr "تکمیل شده"
+
+#: .\order\models.py:45
+msgid "FULL"
+msgstr "کامل"
+
+#: .\order\models.py:46
+msgid "PARTIAL"
+msgstr ""
+
+#: .\order\models.py:47
+msgid "EXCHANGE"
+msgstr "صرافی"
+
+#: .\order\models.py:48
+msgid "USDT"
+msgstr ""
+
+#: .\order\models.py:54 .\order\models.py:62 .\order\models.py:89
+#: .\order\models.py:127 .\order\models.py:170
+msgid "vaccine type"
+msgstr "نوع واکسن"
+
+#: .\order\models.py:56
+msgid "is vaccine type available?"
+msgstr "آیا واکسن موجود است؟"
+
+#: .\order\models.py:63
+msgid "vaccine types"
+msgstr "انواع واکسن"
+
+#: .\order\models.py:68
+msgid "order status"
+msgstr "وضعیت سفارش"
+
+#: .\order\models.py:95
+msgid "order amount in euro"
+msgstr "مبلغ سفارش به یورو"
+
+#: .\order\models.py:96
+msgid "order paid amount in euro"
+msgstr "مبلغ پرداخت شده به یورو"
+
+#: .\order\models.py:98
+#, fuzzy
+#| msgid "payment status"
+msgid "payment date"
+msgstr "وضعیت پرداخت"
+
+#: .\order\models.py:105 .\order\models.py:148
+msgid "dose 1 flight number"
+msgstr ""
+
+#: .\order\models.py:108 .\order\models.py:151
+msgid "dose 1 transportation company name"
+msgstr ""
+
+#: .\order\models.py:111 .\order\models.py:154
+msgid "dose 1 arrival date"
+msgstr ""
+
+#: .\order\models.py:119
+msgid "dose1 vaccine center"
+msgstr ""
+
+#: .\order\models.py:134
+msgid "dose1 vaccination date"
+msgstr ""
+
+#: .\order\models.py:141
+msgid "dose1 next vaccination date"
+msgstr ""
+
+#: .\order\models.py:162
+msgid "dose2 vaccine center"
+msgstr ""
+
+#: .\order\models.py:177
+msgid "dose2 vaccination date"
+msgstr ""
+
+#: .\order\models.py:184
+msgid "dose2 next vaccination date"
+msgstr ""
+
+#: .\order\models.py:191
+msgid "payment type"
+msgstr "روش پرداخت"
+
+#: .\order\models.py:199
+msgid "hotel package"
+msgstr "هتل و نوع اتاق"
+
+#: .\order\models.py:205
+msgid "is order used coupon ?"
+msgstr ""
+
+#: .\order\models.py:206
+msgid "wrong coupons counter"
+msgstr ""
+
+#: .\order\models.py:208
+msgid "usdt token"
+msgstr ""
+
+#: .\order\models.py:215
+msgid "order"
+msgstr "سفارش"
+
+#: .\order\models.py:216
+msgid "orders"
+msgstr "سفارشات"
+
+#: .\order\models.py:223
+msgid "AVAILABLE"
+msgstr "موجود"
+
+#: .\order\models.py:224
+msgid "USED"
+msgstr "استفاده شده"
+
+#: .\order\models.py:225
+msgid "DISABLED"
+msgstr "غیرفعال"
+
+#: .\order\models.py:231
+msgid "coupon pin"
+msgstr "کد تخفیف"
+
+#: .\order\models.py:235 .\payment\models.py:27
+msgid "related order"
+msgstr "سفارش مربوطه"
+
+#: .\order\models.py:242
+#, fuzzy
+#| msgid "payment status"
+msgid "coupon status"
+msgstr "وضعیت پرداخت"
+
+#: .\order\models.py:245
+msgid "coupon off percent"
+msgstr "میزان تخفیف"
+
+#: .\order\models.py:252 .\order\models.py:253
+msgid "coupon"
+msgstr "کد تخفیف"
+
+#: .\order\models.py:257
+#, fuzzy
+#| msgid "invalid person"
+msgid "total person"
+msgstr "کاربر نامعتبر می باشد"
+
+#: .\order\models.py:258
+msgid "hotel name"
+msgstr "نام هتل"
+
+#: .\order\models.py:259
+msgid "number of nights"
+msgstr "مدت اقامت"
+
+#: .\order\models.py:260
+msgid "package price"
+msgstr "قیمت"
+
+#: .\order\models.py:261
+msgid "room type in farsi"
+msgstr ""
+
+#: .\order\models.py:262
+msgid "room type in english"
+msgstr ""
+
+#: .\order\models.py:263
+msgid "room type in turkish"
+msgstr ""
+
+#: .\order\models.py:264
+msgid "farsi description"
+msgstr ""
+
+#: .\order\models.py:265
+msgid "english description"
+msgstr ""
+
+#: .\order\models.py:266
+msgid "turkish description"
+msgstr ""
+
+#: .\order\models.py:267
+#, fuzzy
+#| msgid "email address"
+msgid "farsi address"
+msgstr "آدرس ایمیل"
+
+#: .\order\models.py:268
+#, fuzzy
+#| msgid "email address"
+msgid "english address"
+msgstr "آدرس ایمیل"
+
+#: .\order\models.py:269
+#, fuzzy
+#| msgid "email address"
+msgid "turkish address"
+msgstr "آدرس ایمیل"
+
+#: .\order\models.py:274
+msgid "Iranian rial"
+msgstr ""
+
+#: .\order\models.py:280
+msgid "currency ISO code"
+msgstr ""
+
+#: .\order\models.py:286
+#, fuzzy
+#| msgid "exchange name"
+msgid "exchange by currency name"
+msgstr "نام صرافی"
+
+#: .\order\service.py:51
+msgid "key <vaccine_center> is incorrect or missed"
+msgstr "لطفا مرکز دریافت واکسن را وارد نمایید"
+
+#: .\order\service.py:53
+msgid "key <vaccine_type> is incorrect or missed"
+msgstr "لطفا نوع واکسن را وارد نمایید"
+
+#: .\order\service.py:82
+msgid "key <arrival_date> is incorrect or missed"
+msgstr "لطفا تاریخ را مشخص نمایید"
+
+#: .\order\service.py:162
+msgid "key <order_id> is incorrect or missed"
+msgstr "آیدی سفارش نامعتیر می باشد"
+
+#: .\order\service.py:165
+msgid "key <status> is incorrect or missed"
+msgstr "وضعیت سفارش نامعتبر می باشد"
+
+#: .\order\service.py:168
+#, fuzzy
+#| msgid "key <vaccine_type> is incorrect or missed"
+msgid "key dose1_vaccine_type is incorrect or missed"
+msgstr "لطفا نوع واکسن را وارد نمایید"
+
+#: .\order\service.py:171
+#, fuzzy
+#| msgid "key <vaccine_type> is incorrect or missed"
+msgid "key <dose1_vaccination_date> is incorrect or missed"
+msgstr "لطفا نوع واکسن را وارد نمایید"
+
+#: .\order\service.py:237
+msgid "can not duplicate pins"
+msgstr "کد تخفیف تکراری است"
+
+#: .\order\service.py:242
+#, fuzzy
+#| msgid "you can not use pins any more"
+msgid "Too many attempts. You cannot use coupons anymore"
+msgstr "به دلیل ورود بیش از حد کد تخفیف اشتباه، امکان دریافت تخفیف وجود ندارد"
+
+#: .\order\service.py:246
+msgid "pins can't be greater than order related persons"
+msgstr ""
+"تعداد کد‌های تخفیف وارد شده نمی‌تواند بیشتر از تعداد مهمانان ثبت شده باشد"
+
+#: .\order\service.py:257
+msgid "invalid pin, you have {} opportunities to enter pins"
+msgstr "کد تخفیف نامعتبر است. امکان {} بار تلاش دیگر دارید"
+
+#: .\order\service.py:279
+#, fuzzy
+#| msgid "Sorry, order not found"
+msgid "not found"
+msgstr "سفارش یافت نشد"
+
+#: .\order\views.py:35 .\order\views.py:237
+msgid "Sorry, order not found"
+msgstr "سفارش یافت نشد"
+
+#: .\panel\forms.py:46 .\panel\templates\panel\list.html:81
+msgid "Order Id"
+msgstr ""
+
+#: .\panel\forms.py:52
+msgid "User Email"
+msgstr ""
+
+#: .\panel\forms.py:57
+msgid "Vaccine Center"
+msgstr ""
+
+#: .\panel\forms.py:62 .\panel\templates\panel\list.html:84
+msgid "Vaccine Type"
+msgstr ""
+
+#: .\panel\forms.py:70
+msgid "From Date Arrival"
+msgstr ""
+
+#: .\panel\forms.py:76
+msgid "To Date Arrival"
+msgstr ""
+
+#: .\panel\forms.py:80
+msgid "Status"
+msgstr ""
+
+#: .\panel\forms.py:85 .\panel\templates\panel\list.html:85
+#, fuzzy
+#| msgid "payment status"
+msgid "Payment Status"
+msgstr "وضعیت پرداخت"
+
+#: .\panel\forms.py:94 .\panel\forms.py:116
+#: .\panel\templates\panel\exchange_transaction.html:88
+msgid "Payment Id"
+msgstr ""
+
+#: .\panel\forms.py:102
+msgid "From Date"
+msgstr ""
+
+#: .\panel\forms.py:108
+msgid "To Date"
+msgstr ""
+
+#: .\panel\templates\panel\400.html:22
+msgid "bad_request_error"
+msgstr ""
+
+#: .\panel\templates\panel\400.html:24
+msgid "bad_request_error_msg"
+msgstr ""
+
+#: .\panel\templates\panel\404.html:22
+msgid "notfound_error"
+msgstr ""
+
+#: .\panel\templates\panel\404.html:24
+msgid "notfound_error_msg"
+msgstr ""
+
+#: .\panel\templates\panel\500.html:22
+msgid "internal_error"
+msgstr ""
+
+#: .\panel\templates\panel\500.html:24
+msgid "internal_error_msg"
+msgstr ""
+
+#: .\panel\templates\panel\detail.html:178
+msgid "Name"
+msgstr ""
+
+#: .\panel\templates\panel\detail.html:179
+msgid "SurName"
+msgstr ""
+
+#: .\panel\templates\panel\detail.html:180
+msgid "Gender"
+msgstr ""
+
+#: .\panel\templates\panel\detail.html:181
+msgid "Passport Detail"
+msgstr ""
+
+#: .\panel\templates\panel\detail.html:182
+msgid "status"
+msgstr ""
+
+#: .\panel\templates\panel\exchange_transaction.html:32
+#: .\panel\templates\panel\order_search.html:34
+msgid "Search Order"
+msgstr ""
+
+#: .\panel\templates\panel\exchange_transaction.html:37
+#: .\panel\templates\panel\order_search.html:39
+msgid "Transaction List"
+msgstr ""
+
+#: .\panel\templates\panel\exchange_transaction.html:65
+#: .\panel\templates\panel\list.html:57
+msgid "export"
+msgstr ""
+
+#: .\panel\templates\panel\exchange_transaction.html:69
+#: .\panel\templates\panel\list.html:61
+msgid "filter"
+msgstr ""
+
+#: .\panel\templates\panel\exchange_transaction.html:89
+#, fuzzy
+#| msgid "payment status"
+msgid "Payment Date"
+msgstr "وضعیت پرداخت"
+
+#: .\panel\templates\panel\exchange_transaction.html:90
+msgid "Amount"
+msgstr ""
+
+#: .\panel\templates\panel\exchange_transaction.html:140
+msgid "No Result"
+msgstr ""
+
+#: .\panel\templates\panel\exchange_transaction.html:156
+msgid "لطفا بازه زمانی مورد نظر خود را انتخاب کنید."
+msgstr ""
+
+#: .\panel\templates\panel\header.html:16
+msgid "home"
+msgstr ""
+
+#: .\panel\templates\panel\header.html:20
+msgid "logout"
+msgstr ""
+
+#: .\panel\templates\panel\list.html:80
+msgid "Detail"
+msgstr ""
+
+#: .\panel\templates\panel\list.html:82
+msgid "Order Date"
+msgstr ""
+
+#: .\panel\templates\panel\list.html:83
+msgid "Email"
+msgstr ""
+
+#: .\panel\templates\panel\list.html:86
+msgid "State"
+msgstr ""
+
+#: .\panel\templates\panel\list.html:87
+msgid "First Dose Arrival"
+msgstr ""
+
+#: .\panel\templates\panel\list.html:145
+msgid "no_result"
+msgstr "نتیجه‌ای یافت نشد"
+
+#: .\panel\templates\panel\list.html:158
+msgid "date_error_message"
+msgstr ""
+
+#: .\panel\templates\panel\order_search.html:120
+msgid "Pay"
+msgstr "پرداخت"
+
+#: .\panel\templates\panel\order_search.html:129
+#, fuzzy
+#| msgid "invalid data"
+msgid "Invalid Payment ID"
+msgstr "داده ی نامعتبر"
+
+#: .\panel\templates\panel\order_search.html:145
+msgid "Are You Sure?"
+msgstr ""
+
+#: .\panel\templates\panel\order_search.html:152
+msgid "Yes"
+msgstr ""
+
+#: .\panel\templates\panel\order_search.html:154
+msgid "No"
+msgstr ""
+
+#: .\panel\templates\panel\sidebar.html:13
+msgid "Order List"
+msgstr ""
+
+#: .\panel\templates\panel\sidebar.html:16
+msgid "Scan QR"
+msgstr ""
+
+#: .\panel\templates\panel\sidebar.html:21
+msgid "ExChange"
+msgstr "صرافی"
+
+#: .\panel\templates\user\login.html:29 .\panel\templates\user\login.html:48
+msgid "Sign in"
+msgstr "ورود"
+
+#: .\panel\templates\user\login.html:33
+msgid "username"
+msgstr "نام کاربری"
+
+#: .\panel\templates\user\login.html:38
+msgid "password"
+msgstr "گذرواژه"
+
+#: .\payment\models.py:11
+msgid "CREATED"
+msgstr "ایجاد شده"
+
+#: .\payment\models.py:12
+msgid "FAILED"
+msgstr "ناموفق"
+
+#: .\payment\models.py:13
+msgid "UNKNOWN"
+msgstr ""
+
+#: .\payment\models.py:14
+msgid "SUCCESS"
+msgstr "موفق"
+
+#: .\payment\models.py:20
+msgid "payment status"
+msgstr "وضعیت پرداخت"
+
+#: .\payment\models.py:23
+msgid "transaction id"
+msgstr ""
+
+#: .\payment\models.py:34
+msgid "transaction response log"
+msgstr ""
+
+#: .\payment\models.py:37
+msgid "transaction request log"
+msgstr ""
+
+#: .\payment\models.py:41
+msgid "related exchange"
+msgstr ""
+
+#: .\payment\models.py:50
+msgid "exchange user"
+msgstr ""
+
+#: .\payment\models.py:59
+msgid "payment transaction"
+msgstr ""
+
+#: .\payment\models.py:60
+msgid "payment transactions"
+msgstr ""
+
+#: .\payment\service.py:54
+msgid "online payment is not available in your country"
+msgstr "پرداخت آنلاین در کشور شما فعال نمی باشد"
+
+#: .\payment\service.py:57
+msgid "order_id is incorrect or missed"
+msgstr "شناسه ی سفارش نامعتبر می باشد"
+
+#: .\payment\service.py:60
+msgid "payment type is incorrect or missed"
+msgstr "نوع پرداخت نامعتبر می باشد"
+
+#: .\payment\service.py:68 .\payment\service.py:153
+msgid ""
+"You have an unknown transaction. You can Inquire the status or proceed to "
+"profile. You can contact support with WhatsApp on 908507000700."
+msgstr ""
+"شما یک تراکنش نامشخص دارید. می‌توانید تراکنش را استعلام و یا با زدن ادامه، به "
+"پروفایل خود بازگردید. برای پیگیری می‌توانید با واتساپ به شماره 908507000700 "
+"تماس حاصل فرمایید."
+
+#: .\payment\service.py:123
+#, fuzzy
+#| msgid "payment status"
+msgid "payment call error"
+msgstr "وضعیت پرداخت"
+
+#: .\payment\service.py:133
+#, fuzzy
+#| msgid "location is incorrect or missed"
+msgid "transaction id is incorrect or missed"
+msgstr "اطلاعات مکانی وارد نشده است"
+
+#: .\payment\service.py:160
+msgid "Payment Failed. You can proceed to profile retry payment."
+msgstr ""
+"پرداخت با موفقیت انجام شد. اکنون می‌توانید به پروفایل خود برگشته و مجددا برای "
+"پرداخت تلاش کنید."
+
+#: .\payment\service.py:187
+msgid "exchange is not valid"
+msgstr ""
+
+#: .\payment\service.py:190
+#, fuzzy
+#| msgid "user is incorrect or missed"
+msgid "user is not valid"
+msgstr "کاربر وجود ندارد"
+
+#: .\payment\service.py:193
+#, fuzzy
+#| msgid "order id is incorrect or missed"
+msgid "order is not valid"
+msgstr "آیدی سفارش نامعتبر می باشد"
+
+#: .\payment\service.py:203
+msgid "user haven't access to specified exchange"
+msgstr ""
+
+#: .\payment\service.py:211
+msgid "order doesn't exist"
+msgstr "سفارش یافت نشد"
+
+#: .\payment\service.py:246
+msgid "please insert payment token"
+msgstr ""
+
+#: .\payment\service.py:249
+msgid "a usdt transacion exist"
+msgstr ""
+
+#: .\payment\views.py:143
+msgid "Payment Successful. You can proceed to profile and view your order."
+msgstr ""
+"پرداخت با موفقیت انجام شد. اکنون می‌توانید به پروفایل خود برگشته و وضعیت "
+"سفارش خود را پیگیری کنید"
+
+#: .\settings\base.py:132
+msgid "English"
+msgstr ""
+
+#: .\settings\base.py:133
+msgid "Turkish"
+msgstr ""
+
+#: .\settings\base.py:134
+msgid "Spanish"
+msgstr ""
+
+#: .\settings\base.py:135
+msgid "Farsi"
+msgstr "فارسی"
+
+#: .\utils\functions.py:56 .\utils\functions.py:57
+#, fuzzy
+#| msgid "Sorry, order not found"
+msgid "page not found"
+msgstr "سفارش یافت نشد"
+
+#: .\utils\models.py:36
+msgid "uuid"
+msgstr ""
+
+#: .\utils\models.py:43 .\utils\models.py:49
+msgid "updated at"
+msgstr ""
+
+#: .\vaccine\urls.py:20
+msgid "Admin"
+msgstr ""
+
+#: .\vaccine\urls.py:23
+msgid "Vaccine | Vaccine Admin Panel"
+msgstr ""
+
+#: .\vaccine\urls.py:26
+msgid "Vaccine"
+msgstr "واکسن"
+
+#, fuzzy
+#~| msgid "national id"
+#~ msgid "transaction failed"
+#~ msgstr "کد ملی"
+
+#~ msgid "order id is incorrect or missed"
+#~ msgstr "آیدی سفارش نامعتبر می باشد"
+
+#~ msgid "key <flight_number> is incorrect or missed"
+#~ msgstr "لطفا شماره ی پرواز را وارد نمایید"
+
+#~ msgid "key <transport_company_name> is incorrect or missed"
+#~ msgstr "لطفا شرکت هواپیمایی را وارد نمایید"

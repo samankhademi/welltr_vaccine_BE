@@ -1,0 +1,191 @@
+{% extends "panel/layout.html" %}
+
+{% load static %}
+
+{% load i18n %}
+
+{% block pageHead %}
+    <link rel='stylesheet' type='text/css' href='{% static "panel/list.css" %}'>
+    <link rel='stylesheet' type='text/css' href='{% static "panel/detail.css" %}'>
+    <link rel='stylesheet' type='text/css' href='{% static "css/vendors/dataTables.bootstrap4.min.css" %}'>
+    <link rel='stylesheet' type='text/css' href='{% static "panel/reports.css" %}'>
+    <link rel='stylesheet' type='text/css' href='{% static "panel/datatable.css" %}'>
+    <link rel='stylesheet' type='text/css' href='{% static "css/vendors/bootstrap-select.min.css" %}'>
+    <link rel="stylesheet" type="text/css" href="{% static "css/vendors/bootstrap-datepicker.min.css" %}">
+
+    <script rel="script" type="application/javascript"
+            src="{% static "script/vendors/jalali-moment.browser.js" %}"></script>
+    <script rel="script" type="application/javascript"
+            src="{% static "script/vendors/bootstrap-datepicker.min.js" %}"></script>
+    <script src='{% static "script/vendors/jquery.dataTables.min.js" %}'></script>
+    <script src='{% static "script/vendors/bootstrap-select.min.js" %}'></script>
+
+{% endblock pageHead %}
+
+{% block main %}
+
+    <!--##### START TAB PANEL HEADER SECTION #####-->
+    <div class="container">
+        <div class="row justify-content-md-center apTabPanel">
+            <div class="col">
+                <a href="{% url 'panel:order_search' %}">
+                    <div class="apTabTitle">{% trans 'Search Order' %}</div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="{% url 'panel:exchange_transaction' %}">
+                    <div class="apTabTitle active">{% trans 'Transaction List' %}</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--##### END TAB PANEL HEADER SECTION #####-->
+
+    <div class="container cardBox">
+
+        <!--##### START RESULT FILTER SECTION #####-->
+        <div class="row dataTableSearch">
+            <form id="filter_form" action="" method="get" style="width: 100%">
+                <div class="form-row">
+                    <div class="col-sm-6 col-lg-3 apFilterItem">
+                        {{ filter_form.payment_id }}
+                    </div>
+                    <div class="col-sm-6 col-lg-3 apFilterItem">
+                        {{ filter_form.from_date }}
+                    </div>
+                    <div class="col-sm-6 col-lg-3 apFilterItem">
+                        {{ filter_form.to_date }}
+                    </div>
+                </div>
+
+                <!--##### START ّ Filter RESULT SECTION #####-->
+                <div class="row dataTableFilter justify-content-md-end mb-4">
+                    <!--
+                    <div class="col-sm-6 col-lg-3 apFilterItem">
+                        <button id="export_to_xls" class="btn apButton apButton--download">{% trans "export" %}</button>
+                    </div>
+                    -->
+                    <div class="col-sm-6 col-lg-3 apFilterItem">
+                        <button class="btn apButton" type="submit">{% trans "filter" %}</button>
+                    </div>
+                </div>
+                <!--##### End Filter RESULT SECTION #####-->
+            </form>
+        </div>
+        <!--##### END RESULT FILTER SECTION #####-->
+
+        <!--##### START RESULT DATA TABLE SECTION #####-->
+        <div class="row justify-content-md-center mt-5">
+
+            {% if not is_invalid_response %}
+                {% if transactions.content|length != 0 %}
+                    <div class="col apPaginateTbl">
+                        <div class="table-responsive">
+                            <table id="example" class="apTbl">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>{% trans 'Payment Id' %}</th>
+                                    <th>{% trans 'Payment Date' %}</th>
+                                    <th>{% trans 'Amount' %}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for data in transactions.content %}
+                                    <tr>
+                                        <td>{{ 1|add:forloop.counter0 }}</td>
+                                        <td>{{ data.order.code }}</td>
+                                        <td>{{ data.created_at|slice:"0:10" }}</td>
+                                        <td>{{ data.order.amount }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!--
+                        <div class="row">
+                            <div class="col-sm-12 col-md-5">
+                                <div class="dataTables_info" role="status" aria-live="polite">
+                                    view {{ transactions.pagination.start_index }}
+                                    to {{ transactions.pagination.end_index }}
+                                    from {{ transactions.pagination.total_index }}
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-7">
+                                {% if transactions.pagination.has_other_pages %}
+                                    <div class="dataTables_paginate paging_simple_numbers">
+                                        {% if transactions.pagination.has_previous %}
+                                            <a class="paginate_button page-item previous"
+                                               href="{{ request.get_full_path }}&page={{ transactions.pagination.previous_page_number }}"></a>
+                                        {% else %}
+                                            <a class="paginate_button page-item previous disabled" href="#"></a>
+                                        {% endif %}
+                                        {% if transactions.pagination.has_next %}
+                                            <a class="paginate_button page-item next"
+                                               href="{{ request.get_full_path }}&page={{ transactions.pagination.next_page_number }}"></a>
+                                        {% else %}
+                                            <a class="paginate_button page-item next disabled" href="#"></a>
+                                        {% endif %}
+                                        <div class="clearfix"></div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        -->
+
+                    </div>
+                {% else %}
+                    <div class="col apPaginateTbl text-center apUnknown">
+                        {% trans "No Result" %}
+                    </div>
+                {% endif %}
+            {% endif %}
+
+        </div>
+        <!--##### END RESULT DATA TABLE SECTION #####-->
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body" style="text-align: center;font-weight: bold;padding: 30px 0;">
+                    {% trans "لطفا بازه زمانی مورد نظر خود را انتخاب کنید." %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('.apTabTitle').on('click', function () {
+                $('.apTabTitle').removeClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+
+        $(document).ready(function () {
+
+            $("#from_date").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '2020:2030',
+                dateFormat: 'dd/mm/yy'
+            });
+            $("#to_date").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '2020:2030',
+                dateFormat: 'dd/mm/yy'
+            });
+
+        });
+    </script>
+
+{% endblock main %}

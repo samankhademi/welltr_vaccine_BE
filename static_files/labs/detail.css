@@ -1,0 +1,12 @@
+/********************** Detail **********************/
+div.cardBox p.h4{
+    width: 90%;
+    margin: 2rem auto 0px auto;
+}
+div.cardBox p.h4:nth-child(1){
+    margin: 0px auto 0px auto;
+}
+div.cardBox hr{
+    width: 90%;
+    margin: 1rem auto 1rem auto;
+}

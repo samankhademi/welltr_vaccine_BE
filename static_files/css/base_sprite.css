@@ -1,0 +1,85 @@
+.sprite {
+    background: url('/backend/static/assets/images/base_sprite.png') no-repeat 0 0;
+    background-size: 320px 320px;
+}
+
+.sprite--app-base-logo {
+    background-position: -60px 12px;
+    width: 72px;
+    height: 59px;
+}
+
+.sprite--app-logo {
+    background-position: -1px 0;
+    width: 114px;
+    height: 34px;
+}
+
+.sprite--menu {
+    background-position: -116px -1px;
+    width: 24px;
+    height: 14px;
+}
+
+.sprite--search {
+    background-position: -141px -1px;
+    width: 20px;
+    height: 20px;
+}
+
+.sprite--app-standalone-logo {
+    background-position: -231px -1px;
+    width: 88px;
+    height: 72px;
+}
+
+.login_bg {
+    background-image: url('/backend/static/assets/images/bg.jpg');
+}
+
+.sprite--login {
+    background-position: -1px -35px;
+    width: 12px;
+    height: 12px;
+}
+
+.sprite--logout {
+    background-position: -15px -35px;
+    width: 12px;
+    height: 12px;
+}
+
+.sprite--view {
+    background-position: -28px -35px;
+    width: 14px;
+    height: 11px;
+}
+
+.sprite--edit {
+    background-position: -97px -35px;
+    width: 12px;
+    height: 12px;
+}
+
+.sprite--edit-white {
+    background-position: -110px -35px;
+    width: 12px;
+    height: 12px;
+}
+
+.sprite--delete {
+    background-position: -83px -35px;
+    width: 12px;
+    height: 14px;
+}
+
+.detail-icon {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.sprite--detail-logo {
+    background-position: -28px -35px;
+    width: 14px;
+    height: 11px;
+}
